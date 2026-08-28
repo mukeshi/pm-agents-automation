@@ -1,0 +1,99 @@
+name: PM Agents - Scheduled Reports
+
+on:
+  schedule:
+    # Every weekday at 8:30 AM IST (3:00 AM UTC)
+    - cron: '0 3 * * 1-5'
+    # Friday at 5:00 PM IST (11:30 AM UTC) - Weekly reports
+    - cron: '30 11 * * 5'
+    # Daily at 9:00 AM IST (3:30 AM UTC) - Release scope deviation check
+    - cron: '30 3 * * *'
+  workflow_dispatch:
+    inputs:
+      agent:
+        description: 'Which agent to run'
+        required: true
+        type: choice
+        options:
+          - all-morning
+          - standup
+          - sprint-health
+          - status-report
+          - risk-management
+          - executive-dashboard
+          - retrospective
+          - backlog-grooming
+          - sprint-planning
+          - dependency-tracking
+          - raid-log
+          - weekly-smo-update
+          - release-scope-tracker
+
+env:
+  JIRA_BASE_URL: https://hybrent.atlassian.net
+  JIRA_USERNAME: ${{ secrets.JIRA_USERNAME }}
+  JIRA_API_TOKEN: ${{ secrets.JIRA_API_TOKEN }}
+  CONFLUENCE_BASE_URL: https://hybrent.atlassian.net/wiki
+  CONFLUENCE_PAGE_ID: '3145236484'
+
+jobs:
+  morning-reports:
+    if: github.event.schedule == '0 3 * * 1-5' || github.event.inputs.agent == 'all-morning' || github.event.inputs.agent == 'standup' || github.event.inputs.agent == 'sprint-health'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install requests
+      - name: Run Morning Agents
+        run: python scripts/pm_agents.py morning
+        env:
+          AGENT_TYPE: ${{ github.event.inputs.agent || 'all-morning' }}
+
+  weekly-reports:
+    if: github.event.schedule == '30 11 * * 5' || github.event.inputs.agent == 'status-report' || github.event.inputs.agent == 'executive-dashboard' || github.event.inputs.agent == 'retrospective' || github.event.inputs.agent == 'weekly-smo-update'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install requests
+      - name: Run Weekly Agents
+        run: python scripts/pm_agents.py weekly
+        env:
+          AGENT_TYPE: ${{ github.event.inputs.agent || 'weekly' }}
+
+  on-demand:
+    if: github.event.inputs.agent == 'risk-management' || github.event.inputs.agent == 'backlog-grooming' || github.event.inputs.agent == 'sprint-planning' || github.event.inputs.agent == 'dependency-tracking' || github.event.inputs.agent == 'raid-log'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install requests
+      - name: Run On-Demand Agent
+        run: python scripts/pm_agents.py ${{ github.event.inputs.agent }}
+
+  release-scope-tracker:
+    if: github.event.schedule == '30 3 * * *' || github.event.inputs.agent == 'release-scope-tracker'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install requests
+      - name: Run Release Scope Deviation Tracker
+        run: python scripts/pm_agents.py release-scope-tracker
+      - name: Commit updated snapshots
+        run: |
+          git config user.name "pm-agents-bot"
+          git config user.email "pm-agents-bot@users.noreply.github.com"
+          git add scripts/snapshots/*.json
+          git diff --staged --quiet || git commit -m "chore: update release scope snapshots [skip ci]"
+          git push
