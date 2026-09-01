@@ -444,11 +444,17 @@ def _save_snapshot(project, version, issues_by_key):
         }, f, indent=2)
 
 
-def run_release_scope_tracker(version=None):
+def run_release_scope_tracker(version=None, reset_baseline=False):
     """
     Refresh release scope for one or all tracked versions.
     Diffs current Jira scope against the last saved snapshot,
     updates the Confluence dashboard with Added/Removed/Regressed tables.
+
+    If reset_baseline=True, the current Jira scope is treated as the
+    starting point (no Added/Removed/Regressed are computed against
+    the old snapshot). Use this after a data-quality issue to establish
+    a clean baseline without reporting false deltas. Diffing against
+    this baseline resumes automatically on the next normal run.
     """
     print("\n=== RELEASE SCOPE DEVIATION TRACKER ===\n")
 
@@ -481,7 +487,7 @@ def run_release_scope_tracker(version=None):
                 "priority": issue["fields"]["priority"]["name"],
             }
 
-        last = _load_last_snapshot(project, ver)
+        last = None if reset_baseline else _load_last_snapshot(project, ver)
 
         added, removed, regressed = [], [], []
 
@@ -506,6 +512,8 @@ def run_release_scope_tracker(version=None):
                     })
 
             print(f"Previous snapshot: {last['date']} ({len(prev_keys)} issues)")
+        elif reset_baseline:
+            print("Baseline reset requested — treating current scope as the new starting point (no deltas reported).")
         else:
             print("No previous snapshot found — this run establishes the baseline.")
 
@@ -525,27 +533,52 @@ def run_release_scope_tracker(version=None):
             status_counts[v["status"]] += 1
 
         today = datetime.now().strftime("%Y-%m-%d")
+        is_baseline = last is None
 
         # Build HTML snippet to append/update on Confluence page
-        summary_rows = [[today, str(len(current_map)), str(len(added)), str(len(removed)), str(len(regressed))]]
-        summary_table = html_table(
-            ["Snapshot Date", "Total Scope", "Added", "Removed", "Regressed"],
-            summary_rows
-        )
-
-        added_rows = [[today, k, current_map[k]["summary"][:80]] for k in added] or [["-", "-", "No additions detected"]]
-        added_table = html_table(["Date Detected", "Key", "Summary"], added_rows)
-
-        removed_rows = [[today, k, "(removed from scope)"] for k in removed] or [["-", "-", "No removals detected"]]
-        removed_table = html_table(["Date Detected", "Key", "Note"], removed_rows)
-
-        regressed_rows = [[today, r["key"], r["summary"][:60], f"{r['prev_status']} -> {r['curr_status']}"] for r in regressed] or [["-", "-", "-", "No regressions detected"]]
-        regressed_table = html_table(["Date Detected", "Key", "Summary", "Status Change"], regressed_rows)
+        if is_baseline:
+            summary_rows = [[today, str(len(current_map)), "Baseline established"]]
+            summary_table = html_table(
+                ["Snapshot Date", "Total Scope", "Note"],
+                summary_rows
+            )
+        else:
+            summary_rows = [[today, str(len(current_map)), str(len(added)), str(len(removed)), str(len(regressed))]]
+            summary_table = html_table(
+                ["Snapshot Date", "Total Scope", "Added", "Removed", "Regressed"],
+                summary_rows
+            )
 
         status_rows = [[status, str(count)] for status, count in sorted(status_counts.items())]
         status_table = html_table(["Status", "Count"], status_rows)
 
-        html = f"""
+        if is_baseline:
+            # No prior snapshot to diff against — show current scope as-is,
+            # no Added/Removed/Regressed noise. Deltas resume from tomorrow.
+            current_rows = [[k, v["summary"][:80], v["status"], v["priority"]] for k, v in sorted(current_map.items())] or [["-", "No issues in scope", "-", "-"]]
+            current_table = html_table(["Key", "Summary", "Status", "Priority"], current_rows)
+
+            html = f"""
+            <h2>Auto-Refresh Result — {today}</h2>
+            <p><strong>Project:</strong> {project} | <strong>Version:</strong> {ver}</p>
+            <h3>Latest Snapshot Summary</h3>
+            {summary_table}
+            <h3>Current Status Breakdown</h3>
+            {status_table}
+            <h3>Current Scope ({len(current_map)} issues)</h3>
+            {current_table}
+            """
+        else:
+            added_rows = [[today, k, current_map[k]["summary"][:80]] for k in added] or [["-", "-", "No additions detected"]]
+            added_table = html_table(["Date Detected", "Key", "Summary"], added_rows)
+
+            removed_rows = [[today, k, "(removed from scope)"] for k in removed] or [["-", "-", "No removals detected"]]
+            removed_table = html_table(["Date Detected", "Key", "Note"], removed_rows)
+
+            regressed_rows = [[today, r["key"], r["summary"][:60], f"{r['prev_status']} -> {r['curr_status']}"] for r in regressed] or [["-", "-", "-", "No regressions detected"]]
+            regressed_table = html_table(["Date Detected", "Key", "Summary", "Status Change"], regressed_rows)
+
+            html = f"""
         <h2>Auto-Refresh Result — {today}</h2>
         <p><strong>Project:</strong> {project} | <strong>Version:</strong> {ver}</p>
         <h3>Latest Snapshot Summary</h3>
@@ -635,7 +668,8 @@ def main():
         run_weekly_smo_update()
     elif agent_override == "release-scope-tracker":
         target_version = sys.argv[2] if len(sys.argv) > 2 else None
-        run_release_scope_tracker(target_version)
+        reset = os.environ.get("RESET_BASELINE", "false").lower() == "true"
+        run_release_scope_tracker(target_version, reset_baseline=reset)
     else:
         print(f"Unknown agent: {agent_override}")
         sys.exit(1)
