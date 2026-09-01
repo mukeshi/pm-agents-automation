@@ -153,7 +153,7 @@
     },
     "HYB2-17245": {
       "summary": "Scionhealth > Orders Listing > Search by SKU not working \u2014 progress bar stuck, API requests cancelled",
-      "status": "Ready-For-QA",
+      "status": "In QA",
       "status_category": "indeterminate",
       "priority": "Minor"
     },
@@ -207,7 +207,7 @@
     },
     "HYB2-17209": {
       "summary": "Implement Performance Improvements for Cycle Counts List API in ScionHealth",
-      "status": "Ready-For-QA",
+      "status": "In QA",
       "status_category": "indeterminate",
       "priority": "Minor"
     },
@@ -411,8 +411,8 @@
     },
     "HYB2-16333": {
       "summary": "API Performance Improvement > UserService's updateUsersModuleAccessJson method ",
-      "status": "In QA",
-      "status_category": "indeterminate",
+      "status": "Reopened",
+      "status_category": "new",
       "priority": "Major"
     },
     "HYB2-16213": {
