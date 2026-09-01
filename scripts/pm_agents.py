@@ -24,14 +24,28 @@ PROJECTS = ["HYB2", "IMA", "PRO", "SMO"]
 
 
 def jira_search(jql, fields="summary,status,assignee,priority,created,updated,resolutiondate", max_results=100):
-    """Search Jira issues using JQL."""
-    url = f"{JIRA_BASE}/rest/api/3/search"
-    params = {"jql": jql, "fields": fields, "maxResults": max_results}
-    resp = requests.get(url, params=params, auth=AUTH, headers=HEADERS)
-    if resp.status_code == 200:
-        return resp.json().get("issues", [])
-    print(f"Jira search failed ({resp.status_code}): {resp.text[:200]}")
-    return []
+    """Search Jira issues using JQL. Paginates via nextPageToken until all results are collected."""
+    url = f"{JIRA_BASE}/rest/api/3/search/jql"
+    all_issues = []
+    next_page_token = None
+    while True:
+        payload = {
+            "jql": jql,
+            "fields": fields.split(",") if isinstance(fields, str) else fields,
+            "maxResults": max_results,
+        }
+        if next_page_token:
+            payload["nextPageToken"] = next_page_token
+        resp = requests.post(url, json=payload, auth=AUTH, headers=HEADERS)
+        if resp.status_code != 200:
+            print(f"Jira search failed ({resp.status_code}): {resp.text[:200]}")
+            break
+        data = resp.json()
+        all_issues.extend(data.get("issues", []))
+        next_page_token = data.get("nextPageToken")
+        if not next_page_token or not data.get("issues"):
+            break
+    return all_issues
 
 
 def get_confluence_page(page_id):
