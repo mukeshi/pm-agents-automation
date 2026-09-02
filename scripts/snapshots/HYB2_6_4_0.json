@@ -15,14 +15,14 @@
     },
     "HYB2-17364": {
       "summary": "Shipment/Order/QOH Upload > SQL Validation Appears When Serial Number or Lot Number Exceeds the Character Limit.",
-      "status": "To-Do",
-      "status_category": "new",
+      "status": "Ready-For-QA",
+      "status_category": "indeterminate",
       "priority": "Minor"
     },
     "HYB2-17363": {
       "summary": "Bill and Replace > Backjob Fails When Serial Number or Lot Number Exceeds the Character Limit.",
-      "status": "To-Do",
-      "status_category": "new",
+      "status": "Ready-For-QA",
+      "status_category": "indeterminate",
       "priority": "Minor"
     },
     "HYB2-17361": {
