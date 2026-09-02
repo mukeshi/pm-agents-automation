@@ -547,5 +547,11 @@
       "status_category": "done",
       "priority": "Minor"
     }
+  },
+  "last_diff": {
+    "date": "2026-09-02",
+    "added": [],
+    "removed": [],
+    "regressed": []
   }
 }
