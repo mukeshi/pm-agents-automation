@@ -1,9 +1,9 @@
 {
-  "date": "2026-09-01",
+  "date": "2026-09-02",
   "issues": {
     "HYB2-17365": {
       "summary": "Add SIS APIs and upload 6.3.0 Hybrent API documentation using Postman collection (JSON)",
-      "status": "UI Development",
+      "status": "Dev-Review",
       "status_category": "indeterminate",
       "priority": "Minor"
     },
