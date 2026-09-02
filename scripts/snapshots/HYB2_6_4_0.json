@@ -463,5 +463,28 @@
       "status_category": "indeterminate",
       "priority": "Minor"
     }
+  },
+  "last_diff": {
+    "date": "2026-09-02",
+    "added": [
+      {
+        "key": "HYB2-17232",
+        "summary": "presbyterianhomes.hybrent.com v3.7.17 > standard billing report issue"
+      },
+      {
+        "key": "HYB2-17236",
+        "summary": "Develop and Implement sp_analyze_tables for Multi-Database Instances with More Than 5 Databases"
+      },
+      {
+        "key": "HYB2-17404",
+        "summary": "In the Top Vendors Report, the \u2018Location Name\u2019 column should be hidden when the facilities filter is set to \u2018All facilities\u2019."
+      },
+      {
+        "key": "HYB2-17405",
+        "summary": "Develop and Implement sp_analyze_tables for Multi-Database Instances with More Than 5 Databases"
+      }
+    ],
+    "removed": [],
+    "regressed": []
   }
 }
