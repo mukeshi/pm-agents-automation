@@ -435,12 +435,14 @@ def _load_last_snapshot(project, version):
     return None
 
 
-def _save_snapshot(project, version, issues_by_key):
+def _save_snapshot(project, version, issues_by_key, last_diff=None):
     path = _snapshot_path(project, version)
+    today = datetime.now().strftime("%Y-%m-%d")
     with open(path, "w") as f:
         json.dump({
-            "date": datetime.now().strftime("%Y-%m-%d"),
-            "issues": issues_by_key
+            "date": today,
+            "issues": issues_by_key,
+            "last_diff": last_diff or {"date": today, "added": [], "removed": [], "regressed": []}
         }, f, indent=2)
 
 
@@ -488,16 +490,38 @@ def run_release_scope_tracker(version=None, reset_baseline=False):
             }
 
         last = None if reset_baseline else _load_last_snapshot(project, ver)
+        today = datetime.now().strftime("%Y-%m-%d")
 
-        added, removed, regressed = [], [], []
+        # added_detail / removed_detail carry {"key", "summary"} pairs so
+        # that a same-day re-run can redisplay them without needing to look
+        # summaries up in current_map (which may not still contain removed
+        # items). regressed already carries full detail.
+        added_detail, removed_detail, regressed = [], [], []
+        # True only when this run establishes a fresh baseline with no
+        # Added/Removed/Regressed to report (first-ever run or explicit reset).
+        is_baseline = False
 
-        if last:
+        if last and last.get("date") == today and not reset_baseline:
+            # Same-day re-run (e.g. GitHub Actions cron fired more than once,
+            # or a manual trigger was run after the scheduled job already ran
+            # today). Reuse the diff already computed earlier today instead
+            # of recomputing it against the now-identical current scope,
+            # which would incorrectly report 0 changes and erase today's
+            # real detected diff.
+            stored_diff = last.get("last_diff") or {}
+            added_detail = stored_diff.get("added", [])
+            removed_detail = stored_diff.get("removed", [])
+            regressed = stored_diff.get("regressed", [])
+            print(f"Snapshot already refreshed today ({today}) — reusing today's detected changes instead of re-diffing.")
+        elif last and not reset_baseline:
             prev_issues = last["issues"]
             prev_keys = set(prev_issues.keys())
             curr_keys = set(current_map.keys())
 
-            added = sorted(curr_keys - prev_keys)
-            removed = sorted(prev_keys - curr_keys)
+            added_keys = sorted(curr_keys - prev_keys)
+            removed_keys = sorted(prev_keys - curr_keys)
+            added_detail = [{"key": k, "summary": current_map[k]["summary"]} for k in added_keys]
+            removed_detail = [{"key": k, "summary": prev_issues[k].get("summary", "")} for k in removed_keys]
 
             # Status regression: was "done", now not "done"
             for key in curr_keys & prev_keys:
@@ -513,17 +537,19 @@ def run_release_scope_tracker(version=None, reset_baseline=False):
 
             print(f"Previous snapshot: {last['date']} ({len(prev_keys)} issues)")
         elif reset_baseline:
+            is_baseline = True
             print("Baseline reset requested — treating current scope as the new starting point (no deltas reported).")
         else:
+            is_baseline = True
             print("No previous snapshot found — this run establishes the baseline.")
 
         print(f"Current scope: {len(current_map)} issues")
-        print(f"Added: {len(added)} | Removed: {len(removed)} | Regressed: {len(regressed)}")
+        print(f"Added: {len(added_detail)} | Removed: {len(removed_detail)} | Regressed: {len(regressed)}")
 
-        for k in added:
-            print(f"  🟢 ADDED: {k} - {current_map[k]['summary'][:60]}")
-        for k in removed:
-            print(f"  🔴 REMOVED: {k}")
+        for a in added_detail:
+            print(f"  🟢 ADDED: {a['key']} - {a['summary'][:60]}")
+        for r in removed_detail:
+            print(f"  🔴 REMOVED: {r['key']}")
         for r in regressed:
             print(f"  🟡 REGRESSED: {r['key']} ({r['prev_status']} -> {r['curr_status']})")
 
@@ -531,9 +557,6 @@ def run_release_scope_tracker(version=None, reset_baseline=False):
         status_counts = defaultdict(int)
         for v in current_map.values():
             status_counts[v["status"]] += 1
-
-        today = datetime.now().strftime("%Y-%m-%d")
-        is_baseline = last is None
 
         # Build HTML snippet to append/update on Confluence page
         if is_baseline:
@@ -543,7 +566,7 @@ def run_release_scope_tracker(version=None, reset_baseline=False):
                 summary_rows
             )
         else:
-            summary_rows = [[today, str(len(current_map)), str(len(added)), str(len(removed)), str(len(regressed))]]
+            summary_rows = [[today, str(len(current_map)), str(len(added_detail)), str(len(removed_detail)), str(len(regressed))]]
             summary_table = html_table(
                 ["Snapshot Date", "Total Scope", "Added", "Removed", "Regressed"],
                 summary_rows
@@ -569,10 +592,10 @@ def run_release_scope_tracker(version=None, reset_baseline=False):
             {current_table}
             """
         else:
-            added_rows = [[today, k, current_map[k]["summary"][:80]] for k in added] or [["-", "-", "No additions detected"]]
+            added_rows = [[today, a["key"], a["summary"][:80]] for a in added_detail] or [["-", "-", "No additions detected"]]
             added_table = html_table(["Date Detected", "Key", "Summary"], added_rows)
 
-            removed_rows = [[today, k, "(removed from scope)"] for k in removed] or [["-", "-", "No removals detected"]]
+            removed_rows = [[today, r["key"], "(removed from scope)"] for r in removed_detail] or [["-", "-", "No removals detected"]]
             removed_table = html_table(["Date Detected", "Key", "Note"], removed_rows)
 
             regressed_rows = [[today, r["key"], r["summary"][:60], f"{r['prev_status']} -> {r['curr_status']}"] for r in regressed] or [["-", "-", "-", "No regressions detected"]]
@@ -597,8 +620,16 @@ def run_release_scope_tracker(version=None, reset_baseline=False):
         title = f"{project} v{ver} - Scope Commitment & Deviation Dashboard"
         update_confluence_page(page_id, title, html)
 
-        # Save new snapshot for next comparison
-        _save_snapshot(project, ver, current_map)
+        # Save new snapshot for next comparison, carrying forward today's
+        # diff so a same-day re-run (duplicate cron fire, manual trigger,
+        # etc.) can redisplay it instead of recomputing (and erasing) it.
+        diff_to_persist = {
+            "date": today,
+            "added": added_detail,
+            "removed": removed_detail,
+            "regressed": regressed,
+        }
+        _save_snapshot(project, ver, current_map, last_diff=diff_to_persist)
         print(f"Snapshot saved for {project} v{ver}.")
 
 
