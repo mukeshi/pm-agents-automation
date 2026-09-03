@@ -1,6 +1,6 @@
 {
-  "date": "2026-09-03",
-  "issues": {
+  "baseline_date": "2026-09-03",
+  "baseline_issues": {
     "HYB2-17365": {
       "summary": "Add SIS APIs and upload 6.3.0 Hybrent API documentation using Postman collection (JSON)",
       "status": "Done/QA Complete",
@@ -548,10 +548,553 @@
       "priority": "Minor"
     }
   },
-  "last_diff": {
-    "date": "2026-09-03",
-    "added": [],
-    "removed": [],
-    "regressed": []
+  "current_date": "2026-09-03",
+  "current_issues": {
+    "HYB2-17365": {
+      "summary": "Add SIS APIs and upload 6.3.0 Hybrent API documentation using Postman collection (JSON)",
+      "status": "Done/QA Complete",
+      "status_category": "done",
+      "priority": "Minor"
+    },
+    "HYB2-17332": {
+      "summary": "User > Vendor Access is not working correctly when a User Role is assigned to a user through the User Role module.",
+      "status": "Done/QA Complete",
+      "status_category": "done",
+      "priority": "Minor"
+    },
+    "HYB2-17331": {
+      "summary": "Application Settings > The label name is not properly aligned on the screen.",
+      "status": "Done/QA Complete",
+      "status_category": "done",
+      "priority": "Minor"
+    },
+    "HYB2-17330": {
+      "summary": "Integration Testing > Verify all integration services (HST, Cerner, ePower, PrefCard, Epic, etc.) with Hybrent 6.3",
+      "status": "Done/QA Complete",
+      "status_category": "done",
+      "priority": "Major"
+    },
+    "HYB2-17301": {
+      "summary": "Admin > Approval Flow > Edit Rule > Cut off time(Hrs) did not move pos to next level",
+      "status": "Done/QA Complete",
+      "status_category": "done",
+      "priority": "Minor"
+    },
+    "HYB2-17300": {
+      "summary": "Users > Application Error When assigning user-role to any user",
+      "status": "Done/QA Complete",
+      "status_category": "done",
+      "priority": "Minor"
+    },
+    "HYB2-17298": {
+      "summary": "ITN> Intermittently appears When a user attempts to adjust ITN, the associated Backjob gets failed.",
+      "status": "Done/QA Complete",
+      "status_category": "done",
+      "priority": "Minor"
+    },
+    "HYB2-17297": {
+      "summary": "Import Invoice Only Vendor > When a user tries to import an Invoice Only Vendor through Utilities, the system creates a duplicate vendor.",
+      "status": "Done/QA Complete",
+      "status_category": "done",
+      "priority": "Minor"
+    },
+    "HYB2-17292": {
+      "summary": "Summary: Reports > Backjobs for Reports downloads are failing on qa63 and release63.",
+      "status": "Done/QA Complete",
+      "status_category": "done",
+      "priority": "Major"
+    },
+    "HYB2-17291": {
+      "summary": "Item Catalog > Internal Catalog > Export Items > An \"Export Failed\" error is  displayed while exporting items.",
+      "status": "Done/QA Complete",
+      "status_category": "done",
+      "priority": "Minor"
+    },
+    "HYB2-17281": {
+      "summary": "QA Task > Replace S3 direct URLs with cdn.hybrent.com across backend codebase",
+      "status": "Done/QA Complete",
+      "status_category": "done",
+      "priority": "Critical"
+    },
+    "HYB2-17275": {
+      "summary": "Replace S3 direct URLs with cdn.hybrent.com across backend codebase",
+      "status": "Done/QA Complete",
+      "status_category": "done",
+      "priority": "Critical"
+    },
+    "HYB2-17268": {
+      "summary": "NVIH.hybrent.com > Reports > Real Time Inventory Report > Sub Inventory report export issue",
+      "status": "Done/QA Complete",
+      "status_category": "done",
+      "priority": "Major"
+    },
+    "HYB2-17266": {
+      "summary": "Performance issue > Slowness observed around Po Related API's during Load test on the load test site.  Version 6.3.0-rc.1",
+      "status": "Done/QA Complete",
+      "status_category": "done",
+      "priority": "Minor"
+    },
+    "HYB2-17249": {
+      "summary": "Intermittent > Approval Flow > Application Error When Refreshing an Order with a User Role Containing the GL Code as the Next Approver.",
+      "status": "Done/QA Complete",
+      "status_category": "done",
+      "priority": "Minor"
+    },
+    "HYB2-17248": {
+      "summary": "Invoice Due Date is calculated incorrectly when processing an EDI file that contains a value in the disc_date_due_1 tag.",
+      "status": "Done/QA Complete",
+      "status_category": "done",
+      "priority": "Major"
+    },
+    "HYB2-17244": {
+      "summary": "Invoice > Users with edit access cannot edit or delete notes created by other users.",
+      "status": "Done/QA Complete",
+      "status_category": "done",
+      "priority": "Minor"
+    },
+    "HYB2-17242": {
+      "summary": "Order/Approve PO/Receive>Search with PO number is not working.",
+      "status": "Done/QA Complete",
+      "status_category": "done",
+      "priority": "Minor"
+    },
+    "HYB2-17229": {
+      "summary": "Item Catalog > Map Facility/Update Price > Charge Capture OFF > User is unable to map an item to a facility without adding a \"Patient Charge\" when \"Charge Capture\" is OFF from Org Settings.",
+      "status": "Done/QA Complete",
+      "status_category": "done",
+      "priority": "Minor"
+    },
+    "HYB2-17215": {
+      "summary": "Item Catalog > Add/Edit Item > Manage Custom UOU > User is able to enter a UOU quantity higher than the value set in App Settings while editing.",
+      "status": "Done/QA Complete",
+      "status_category": "done",
+      "priority": "Minor"
+    },
+    "HYB2-17214": {
+      "summary": "Admin change logs > The Facility Name, Department Name, and Vendor Name columns are currently displaying combined results across all three categories.",
+      "status": "Done/QA Complete",
+      "status_category": "done",
+      "priority": "Minor"
+    },
+    "HYB2-17213": {
+      "summary": "Order/Approve PO/Receive > User is not able to add notes if \"Edit PO\" access is set to \"off\" for the facility.",
+      "status": "Done/QA Complete",
+      "status_category": "done",
+      "priority": "Minor"
+    },
+    "HYB2-17210": {
+      "summary": "Remove Green Dot for Active Support Sessions",
+      "status": "Done/QA Complete",
+      "status_category": "done",
+      "priority": "Minor"
+    },
+    "HYB2-17208": {
+      "summary": "Planner>Patients are not displayed in the Patient dropdown when users attempt to create a case through the Planner module.",
+      "status": "Done/QA Complete",
+      "status_category": "done",
+      "priority": "Major"
+    },
+    "HYB2-17207": {
+      "summary": "Replenish bin->UI ISSUE->Added instruction overlaps with Add instruction label.",
+      "status": "Done/QA Complete",
+      "status_category": "done",
+      "priority": "Minor"
+    },
+    "HYB2-17205": {
+      "summary": "Import Invoice Only Vendor \u2014 A timeout Error When Importing 1000 Records",
+      "status": "Done/QA Complete",
+      "status_category": "done",
+      "priority": "Minor"
+    },
+    "HYB2-17202": {
+      "summary": "Import Users utility  \u2014 An internal server Error When Importing 1000 Records.",
+      "status": "Done/QA Complete",
+      "status_category": "done",
+      "priority": "Minor"
+    },
+    "HYB2-17198": {
+      "summary": "Discrepancy in calculating discounted amount",
+      "status": "Done/QA Complete",
+      "status_category": "done",
+      "priority": "Major"
+    },
+    "HYB2-17197": {
+      "summary": "Invoices> View Invoice log>Sometimes, a duplicate log entry \"Invoice auto-sent to accounting by Scheduler (daily job)\" is generated.",
+      "status": "Done/QA Complete",
+      "status_category": "done",
+      "priority": "Minor"
+    },
+    "HYB2-17168": {
+      "summary": "Invoice status remains \"Send to Accounting \u2013 In Progress\" even after the  Cron Job/daily scheduled job has been executed.",
+      "status": "Done/QA Complete",
+      "status_category": "done",
+      "priority": "Major"
+    },
+    "HYB2-17153": {
+      "summary": "QA Task > 2026Q2S15 > HYB2-12329 > when adding a new vendor from UI, always list orders@hybrent.com in the 'send po update' field. ",
+      "status": "Done/QA Complete",
+      "status_category": "done",
+      "priority": "Minor"
+    },
+    "HYB2-17149": {
+      "summary": "QA Task > 2026Q2S15 > HYB2-17112 > Preserve Configuration ID and Bundle ID in PO for Configurable PunchOut Items",
+      "status": "Done/QA Complete",
+      "status_category": "done",
+      "priority": "Minor"
+    },
+    "HYB2-17146": {
+      "summary": "Add/Edit User > Facilities API fails while loading Facility Access, preventing facility selection on sites with a large number of facilities",
+      "status": "Done/QA Complete",
+      "status_category": "done",
+      "priority": "Minor"
+    },
+    "HYB2-17139": {
+      "summary": "IMU > Percentage Discount is not applied correctly when Account Number is \"*\".",
+      "status": "Done/QA Complete",
+      "status_category": "done",
+      "priority": "Minor"
+    },
+    "HYB2-17135": {
+      "summary": "Remove Border Around Knowledge Base Button ",
+      "status": "Done/QA Complete",
+      "status_category": "done",
+      "priority": "Minor"
+    },
+    "HYB2-17134": {
+      "summary": "Items Catalog > UOM Quantity field \u2014 cannot enter value 10000 ",
+      "status": "Done/QA Complete",
+      "status_category": "done",
+      "priority": "Minor"
+    },
+    "HYB2-17125": {
+      "summary": "QA Task > 2026Q2S15 > HYB2-16767 > Item PO Table > Update item level Back Order status to Accepted when fully invoiced",
+      "status": "Done/QA Complete",
+      "status_category": "done",
+      "priority": "Minor"
+    },
+    "HYB2-17124": {
+      "summary": "QA Task > 2026Q2S15 > HYB2-16482 > Employee Activity Tracking",
+      "status": "Done/QA Complete",
+      "status_category": "done",
+      "priority": "Minor"
+    },
+    "HYB2-17122": {
+      "summary": "QA Task > 2026Q2S15 > HYB2-8778 > Admin > Print barcode/qrcode > printed barcode/qrcode appears misaligned for all Avery templates.",
+      "status": "Done/QA Complete",
+      "status_category": "done",
+      "priority": "Minor"
+    },
+    "HYB2-17119": {
+      "summary": "QA Task > 2026Q2S15 > HYB2-17084 > Import Users with User Role > Server error is displayed when user tries to import users with 1000 records. It works fine for 700 records.",
+      "status": "Done/QA Complete",
+      "status_category": "done",
+      "priority": "Minor"
+    },
+    "HYB2-17112": {
+      "summary": "Preserve Configuration ID and Bundle ID in PO for Configurable PunchOut Items",
+      "status": "Done/QA Complete",
+      "status_category": "done",
+      "priority": "Minor"
+    },
+    "HYB2-17110": {
+      "summary": "Duplicate POs are being created on different sites",
+      "status": "Done/QA Complete",
+      "status_category": "done",
+      "priority": "Major"
+    },
+    "HYB2-17103": {
+      "summary": "QA Task > 2026Q3S14 > HYB2-16825> Invoice/ ITN > Throughout the application > When user try to upload any large file on documents then a error message appear on screen instead of validation message.",
+      "status": "Done/QA Complete",
+      "status_category": "done",
+      "priority": "Minor"
+    },
+    "HYB2-17092": {
+      "summary": "IMU enhancement > allow the IMU to create new categories",
+      "status": "Done/QA Complete",
+      "status_category": "done",
+      "priority": "Minor"
+    },
+    "HYB2-17091": {
+      "summary": "QA Task > 2026Q3S14 >  HYB2-16716 >  Invoice Module: View PO Notes and Attachments Directly from Invoice Details page",
+      "status": "Done/QA Complete",
+      "status_category": "done",
+      "priority": "Minor"
+    },
+    "HYB2-17088": {
+      "summary": "Back job fail-> back job failed while exporting linked item (no item in linked catalog)",
+      "status": "Done/QA Complete",
+      "status_category": "done",
+      "priority": "Minor"
+    },
+    "HYB2-17084": {
+      "summary": "Import Users with User Role > Server error is displayed when user tries to import users with 1000 records. It works fine for 700 records.",
+      "status": "Done/QA Complete",
+      "status_category": "done",
+      "priority": "Minor"
+    },
+    "HYB2-17047": {
+      "summary": "Duplicate POs are being created on different sites",
+      "status": "Done/QA Complete",
+      "status_category": "done",
+      "priority": "Major"
+    },
+    "HYB2-17043": {
+      "summary": "CLONE - Invoice Module: View PO Notes and Attachments Directly from Invoice Details page",
+      "status": "Done/QA Complete",
+      "status_category": "done",
+      "priority": "Minor"
+    },
+    "HYB2-17040": {
+      "summary": "Task 1: Employee Activity Tracking",
+      "status": "Done/QA Complete",
+      "status_category": "done",
+      "priority": "Major"
+    },
+    "HYB2-17017": {
+      "summary": "IMU > GL Code/AR Code is assigned from default COA instead of facility-specific COA",
+      "status": "Done/QA Complete",
+      "status_category": "done",
+      "priority": "Minor"
+    },
+    "HYB2-17010": {
+      "summary": "User Change Logs > Slow Query Analysis.",
+      "status": "Done/QA Complete",
+      "status_category": "done",
+      "priority": "Minor"
+    },
+    "HYB2-17009": {
+      "summary": "QA Task > HYB2-16895> Increase Import Utility Record Limit for Departments, Users, and Vendor Account Numbers. ",
+      "status": "Done/QA Complete",
+      "status_category": "done",
+      "priority": "Minor"
+    },
+    "HYB2-17006": {
+      "summary": "Import Users > Import with User Roles > Provide Vendor internal code error is displayed while importing the user data with \"User Role  with Vendor access\" ",
+      "status": "Done/QA Complete",
+      "status_category": "done",
+      "priority": "Minor"
+    },
+    "HYB2-16999": {
+      "summary": "QA Task > 2026Q2S13 > HYB2-16782 > Hybrent v6.0.1 > User roles > Vendor Access > Vendor access not updating or being altered",
+      "status": "Done/QA Complete",
+      "status_category": "done",
+      "priority": "Major"
+    },
+    "HYB2-16992": {
+      "summary": "Import Patient Utilities> The patient import utility fails to process Excel sheets containing multiple records if the Resident ID field is left blank",
+      "status": "Done/QA Complete",
+      "status_category": "done",
+      "priority": "Major"
+    },
+    "HYB2-16991": {
+      "summary": "User Change Log data takes an excessive amount of time to load.",
+      "status": "Done/QA Complete",
+      "status_category": "done",
+      "priority": "Minor"
+    },
+    "HYB2-16985": {
+      "summary": "The system should prevent users from deactivating their accounts if they are part of the invoice/order approval flows and there are pending purchase orders or invoices awaiting their approval.",
+      "status": "Done/QA Complete",
+      "status_category": "done",
+      "priority": "Minor"
+    },
+    "HYB2-16971": {
+      "summary": " [PROD-CL2] Slow count(*) on Comprehensive Inventory Transaction Report (Cost Center) \u2014 up to 39 sec",
+      "status": "Done/QA Complete",
+      "status_category": "done",
+      "priority": "Minor"
+    },
+    "HYB2-16966": {
+      "summary": "Replace Legacy Henry Schein APIs with New Tested API Endpoints",
+      "status": "Done/QA Complete",
+      "status_category": "done",
+      "priority": "Minor"
+    },
+    "HYB2-16948": {
+      "summary": "DBA TASK (HYB2-16918) - Optimize number_patterns UPDATE query causing DBLoadRelativeToNumVCPUs alerts",
+      "status": "Done/QA Complete",
+      "status_category": "done",
+      "priority": "Minor"
+    },
+    "HYB2-16928": {
+      "summary": "Scan Out >UOU conversions are not working correctly in a specific scenario.",
+      "status": "Done/QA Complete",
+      "status_category": "done",
+      "priority": "Minor"
+    },
+    "HYB2-16899": {
+      "summary": "Remove Patient Editable Permissions from Admin Profile",
+      "status": "Done/QA Complete",
+      "status_category": "done",
+      "priority": "Minor"
+    },
+    "HYB2-16895": {
+      "summary": "Increase Import Utility Record Limit for Departments, Users, and Vendor Account Numbers ",
+      "status": "Done/QA Complete",
+      "status_category": "done",
+      "priority": "Minor"
+    },
+    "HYB2-16888": {
+      "summary": "Item Change Log>The system should create log entries when an image or PDF file is uploaded to an item.",
+      "status": "Done/QA Complete",
+      "status_category": "done",
+      "priority": "Minor"
+    },
+    "HYB2-16876": {
+      "summary": "Allow \"Request Service\" module to be renamed in Application Settings ",
+      "status": "Done/QA Complete",
+      "status_category": "done",
+      "priority": "Minor"
+    },
+    "HYB2-16870": {
+      "summary": "User is unable to add freehand items for Punchout vendors.",
+      "status": "Done/QA Complete",
+      "status_category": "done",
+      "priority": "Minor"
+    },
+    "HYB2-16864": {
+      "summary": "QA Task > 2026Q2S13 > HYB2-16814 > Purchase Order Module \u2013 Implement Optimized Query Changes in Application Code.",
+      "status": "Done/QA Complete",
+      "status_category": "done",
+      "priority": "Minor"
+    },
+    "HYB2-16825": {
+      "summary": "Invoice/ ITN > Throughout the application > When user try to upload any large file on documents then a error message appear on screen instead of validation message. ",
+      "status": "Done/QA Complete",
+      "status_category": "done",
+      "priority": "Minor"
+    },
+    "HYB2-16818": {
+      "summary": "Auto-send 3-way matched invoices to accounting (daily scheduled job + app setting toggle)",
+      "status": "Done/QA Complete",
+      "status_category": "done",
+      "priority": "Minor"
+    },
+    "HYB2-16816": {
+      "summary": "Review and Validate ANALYZE TABLE Stored Procedure",
+      "status": "Done/QA Complete",
+      "status_category": "done",
+      "priority": "Minor"
+    },
+    "HYB2-16814": {
+      "summary": "Purchase Order Module \u2013 Implement Optimized Query Changes in Application Code.",
+      "status": "Done/QA Complete",
+      "status_category": "done",
+      "priority": "Minor"
+    },
+    "HYB2-16793": {
+      "summary": "Check Item availability is not working for Henry Shein vendor",
+      "status": "Done/QA Complete",
+      "status_category": "done",
+      "priority": "Minor"
+    },
+    "HYB2-16783": {
+      "summary": "[PROD-CL2] Slow count(*) on Comprehensive Inventory Transaction Report (Cost Center) \u2014 up to 39 sec",
+      "status": "Done/QA Complete",
+      "status_category": "done",
+      "priority": "Minor"
+    },
+    "HYB2-16782": {
+      "summary": "Hybrent v6.0.1 > User roles > Vendor Access > Vendor access not updating or being altered",
+      "status": "Done/QA Complete",
+      "status_category": "done",
+      "priority": "Major"
+    },
+    "HYB2-16767": {
+      "summary": "Item PO Table > Update item level Back Order status to Accepted when fully invoiced",
+      "status": "Done/QA Complete",
+      "status_category": "done",
+      "priority": "Major"
+    },
+    "HYB2-16741": {
+      "summary": "Preference card > Bulk Import Preference card > Validation Message for Internal Items in Bulk Import Preference Card",
+      "status": "Done/QA Complete",
+      "status_category": "done",
+      "priority": "Minor"
+    },
+    "HYB2-16728": {
+      "summary": "Item Change Log > User is not receiving the \"Item Change Log\" report email and backjobs are getting fail for Item Change Log Download Report File. ",
+      "status": "Done/QA Complete",
+      "status_category": "done",
+      "priority": "Minor"
+    },
+    "HYB2-16717": {
+      "summary": "Manage Inventory: Add visual indicator to distinguish inventory vs non-inventory items",
+      "status": "Done/QA Complete",
+      "status_category": "done",
+      "priority": "Minor"
+    },
+    "HYB2-16716": {
+      "summary": "Invoice Module: View PO Notes and Attachments Directly from Invoice Details page",
+      "status": "Done/QA Complete",
+      "status_category": "done",
+      "priority": "Minor"
+    },
+    "HYB2-16537": {
+      "summary": "Hybrent > scionhealth_prod > Optimization of Frequently Executed Slow Queries",
+      "status": "Done/QA Complete",
+      "status_category": "done",
+      "priority": "Minor"
+    },
+    "HYB2-16483": {
+      "summary": "Employee Session Timeouts",
+      "status": "Done/QA Complete",
+      "status_category": "done",
+      "priority": "Minor"
+    },
+    "HYB2-16482": {
+      "summary": "Employee Activity Tracking",
+      "status": "Done/QA Complete",
+      "status_category": "done",
+      "priority": "Major"
+    },
+    "HYB2-16480": {
+      "summary": "Active Support Session Icon",
+      "status": "Done/QA Complete",
+      "status_category": "done",
+      "priority": "Minor"
+    },
+    "HYB2-15447": {
+      "summary": "Scanout > Memory exhausted error is displayed if the user is adding an item with BX (UOM) in any unit other than Piece or BX.",
+      "status": "Done/QA Complete",
+      "status_category": "done",
+      "priority": "Minor"
+    },
+    "HYB2-14536": {
+      "summary": "SonarQube Code Quality > Fix security issues in VendorItemService file",
+      "status": "Done/QA Complete",
+      "status_category": "done",
+      "priority": "Blocker"
+    },
+    "HYB2-14436": {
+      "summary": "Henry Schein API Testing",
+      "status": "Done/QA Complete",
+      "status_category": "done",
+      "priority": "Minor"
+    },
+    "HYB2-12478": {
+      "summary": "Existing Approval Flow > Add GL Code Rule ",
+      "status": "Done/QA Complete",
+      "status_category": "done",
+      "priority": "Minor"
+    },
+    "HYB2-12329": {
+      "summary": "when adding a new vendor from UI, always list orders@hybrent.com in the 'send po update' field. ",
+      "status": "Done/QA Complete",
+      "status_category": "done",
+      "priority": "Minor"
+    },
+    "HYB2-10900": {
+      "summary": "Central Supply>>item view>> The Search functionality with Bin Location doesn't work.",
+      "status": "Done/QA Complete",
+      "status_category": "done",
+      "priority": "Minor"
+    },
+    "HYB2-8447": {
+      "summary": "Cycle Count> Cycle count gets stuck when user tries to adjust large quantity. ",
+      "status": "Done/QA Complete",
+      "status_category": "done",
+      "priority": "Minor"
+    }
   }
 }

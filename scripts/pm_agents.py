@@ -427,7 +427,8 @@ def _snapshot_path(project, version):
     return os.path.join(SNAPSHOT_DIR, f"{project}_{safe_version}.json")
 
 
-def _load_last_snapshot(project, version):
+def _load_snapshot_file(project, version):
+    """Load the full snapshot record: fixed baseline + most recent scope."""
     path = _snapshot_path(project, version)
     if os.path.exists(path):
         with open(path, "r") as f:
@@ -435,28 +436,48 @@ def _load_last_snapshot(project, version):
     return None
 
 
-def _save_snapshot(project, version, issues_by_key, last_diff=None):
+def _save_snapshot_file(project, version, baseline_date, baseline_issues, current_date, current_issues):
+    """
+    Persist the release scope record.
+
+    baseline_date/baseline_issues: the ORIGINAL committed scope. This is
+    set once (first run, or explicit reset) and never changes on normal
+    runs. All Added/Removed reporting is computed against this baseline,
+    so the dashboard always answers "what changed vs. what we originally
+    committed to" rather than a rolling day-over-day diff.
+
+    current_date/current_issues: the most recent scope pulled from Jira,
+    used for the "Current Scope" table and status breakdown.
+    """
     path = _snapshot_path(project, version)
-    today = datetime.now().strftime("%Y-%m-%d")
     with open(path, "w") as f:
         json.dump({
-            "date": today,
-            "issues": issues_by_key,
-            "last_diff": last_diff or {"date": today, "added": [], "removed": [], "regressed": []}
+            "baseline_date": baseline_date,
+            "baseline_issues": baseline_issues,
+            "current_date": current_date,
+            "current_issues": current_issues,
         }, f, indent=2)
 
 
 def run_release_scope_tracker(version=None, reset_baseline=False):
     """
     Refresh release scope for one or all tracked versions.
-    Diffs current Jira scope against the last saved snapshot,
-    updates the Confluence dashboard with Added/Removed/Regressed tables.
 
-    If reset_baseline=True, the current Jira scope is treated as the
-    starting point (no Added/Removed/Regressed are computed against
-    the old snapshot). Use this after a data-quality issue to establish
-    a clean baseline without reporting false deltas. Diffing against
-    this baseline resumes automatically on the next normal run.
+    Compares CURRENT Jira scope against the ORIGINAL COMMITTED BASELINE
+    (set once, the first time this runs for a version, or explicitly via
+    reset_baseline=True). The dashboard always reports:
+      - Original committed scope (count + full list)
+      - Current scope (count + full list)
+      - Added since baseline (items in current but not in original)
+      - Removed since baseline (items in original but not in current)
+
+    This is a fixed-reference comparison, not a rolling day-over-day diff,
+    so re-running it multiple times in a day (or any day) always produces
+    the same, correct answer — there is nothing to accidentally overwrite.
+
+    reset_baseline=True replaces the stored baseline with the current
+    scope (use this once, deliberately, when the committed scope changes
+    or needs to be corrected — not as part of normal daily operation).
     """
     print("\n=== RELEASE SCOPE DEVIATION TRACKER ===\n")
 
@@ -489,148 +510,98 @@ def run_release_scope_tracker(version=None, reset_baseline=False):
                 "priority": issue["fields"]["priority"]["name"],
             }
 
-        last = None if reset_baseline else _load_last_snapshot(project, ver)
         today = datetime.now().strftime("%Y-%m-%d")
+        existing = _load_snapshot_file(project, ver)
+        # Snapshots written by the old rolling-diff version of this tracker
+        # don't have baseline_date/baseline_issues — treat them as "no
+        # baseline yet" so this run establishes a fresh, correct baseline
+        # rather than crashing on a KeyError.
+        if existing and "baseline_date" not in existing:
+            existing = None
 
-        # added_detail / removed_detail carry {"key", "summary"} pairs so
-        # that a same-day re-run can redisplay them without needing to look
-        # summaries up in current_map (which may not still contain removed
-        # items). regressed already carries full detail.
-        added_detail, removed_detail, regressed = [], [], []
-        # True only when this run establishes a fresh baseline with no
-        # Added/Removed/Regressed to report (first-ever run or explicit reset).
-        is_baseline = False
-
-        if last and last.get("date") == today and not reset_baseline:
-            # Same-day re-run (e.g. GitHub Actions cron fired more than once,
-            # or a manual trigger was run after the scheduled job already ran
-            # today). Reuse the diff already computed earlier today instead
-            # of recomputing it against the now-identical current scope,
-            # which would incorrectly report 0 changes and erase today's
-            # real detected diff.
-            stored_diff = last.get("last_diff") or {}
-            added_detail = stored_diff.get("added", [])
-            removed_detail = stored_diff.get("removed", [])
-            regressed = stored_diff.get("regressed", [])
-            print(f"Snapshot already refreshed today ({today}) — reusing today's detected changes instead of re-diffing.")
-        elif last and not reset_baseline:
-            prev_issues = last["issues"]
-            prev_keys = set(prev_issues.keys())
-            curr_keys = set(current_map.keys())
-
-            added_keys = sorted(curr_keys - prev_keys)
-            removed_keys = sorted(prev_keys - curr_keys)
-            added_detail = [{"key": k, "summary": current_map[k]["summary"]} for k in added_keys]
-            removed_detail = [{"key": k, "summary": prev_issues[k].get("summary", "")} for k in removed_keys]
-
-            # Status regression: was "done", now not "done"
-            for key in curr_keys & prev_keys:
-                prev_cat = prev_issues[key].get("status_category")
-                curr_cat = current_map[key]["status_category"]
-                if prev_cat == "done" and curr_cat != "done":
-                    regressed.append({
-                        "key": key,
-                        "summary": current_map[key]["summary"],
-                        "prev_status": prev_issues[key]["status"],
-                        "curr_status": current_map[key]["status"],
-                    })
-
-            print(f"Previous snapshot: {last['date']} ({len(prev_keys)} issues)")
-        elif reset_baseline:
-            is_baseline = True
-            print("Baseline reset requested — treating current scope as the new starting point (no deltas reported).")
+        if reset_baseline or not existing:
+            # First-ever run for this version, or an explicit baseline reset:
+            # the current scope becomes the fixed baseline going forward.
+            baseline_date = today
+            baseline_issues = current_map
+            reason = "Baseline reset requested" if reset_baseline else "No baseline found"
+            print(f"{reason} — current scope ({len(current_map)} issues) established as the committed baseline.")
         else:
-            is_baseline = True
-            print("No previous snapshot found — this run establishes the baseline.")
+            baseline_date = existing["baseline_date"]
+            baseline_issues = existing["baseline_issues"]
+            print(f"Committed baseline: {baseline_date} ({len(baseline_issues)} issues)")
 
+        baseline_keys = set(baseline_issues.keys())
+        current_keys = set(current_map.keys())
+
+        added_keys = sorted(current_keys - baseline_keys)
+        removed_keys = sorted(baseline_keys - current_keys)
+        added_detail = [{"key": k, "summary": current_map[k]["summary"]} for k in added_keys]
+        removed_detail = [{"key": k, "summary": baseline_issues[k].get("summary", "")} for k in removed_keys]
+
+        print(f"Original committed scope: {len(baseline_issues)} issues (as of {baseline_date})")
         print(f"Current scope: {len(current_map)} issues")
-        print(f"Added: {len(added_detail)} | Removed: {len(removed_detail)} | Regressed: {len(regressed)}")
+        print(f"Added since baseline: {len(added_detail)} | Removed since baseline: {len(removed_detail)}")
 
         for a in added_detail:
             print(f"  🟢 ADDED: {a['key']} - {a['summary'][:60]}")
         for r in removed_detail:
-            print(f"  🔴 REMOVED: {r['key']}")
-        for r in regressed:
-            print(f"  🟡 REGRESSED: {r['key']} ({r['prev_status']} -> {r['curr_status']})")
+            print(f"  🔴 REMOVED: {r['key']} - {r['summary'][:60]}")
 
-        # Build status breakdown for the table
+        # Build status breakdown for the current scope
         status_counts = defaultdict(int)
         for v in current_map.values():
             status_counts[v["status"]] += 1
-
-        # Build HTML snippet to append/update on Confluence page
-        if is_baseline:
-            summary_rows = [[today, str(len(current_map)), "Baseline established"]]
-            summary_table = html_table(
-                ["Snapshot Date", "Total Scope", "Note"],
-                summary_rows
-            )
-        else:
-            summary_rows = [[today, str(len(current_map)), str(len(added_detail)), str(len(removed_detail)), str(len(regressed))]]
-            summary_table = html_table(
-                ["Snapshot Date", "Total Scope", "Added", "Removed", "Regressed"],
-                summary_rows
-            )
-
         status_rows = [[status, str(count)] for status, count in sorted(status_counts.items())]
         status_table = html_table(["Status", "Count"], status_rows)
 
-        if is_baseline:
-            # No prior snapshot to diff against — show current scope as-is,
-            # no Added/Removed/Regressed noise. Deltas resume from tomorrow.
-            current_rows = [[k, v["summary"][:80], v["status"], v["priority"]] for k, v in sorted(current_map.items())] or [["-", "No issues in scope", "-", "-"]]
-            current_table = html_table(["Key", "Summary", "Status", "Priority"], current_rows)
+        summary_rows = [[baseline_date, str(len(baseline_issues)), today, str(len(current_map)), str(len(added_detail)), str(len(removed_detail))]]
+        summary_table = html_table(
+            ["Baseline Date", "Original Committed Scope", "Last Refreshed", "Current Scope", "Added", "Removed"],
+            summary_rows
+        )
 
-            html = f"""
-            <h2>Auto-Refresh Result — {today}</h2>
-            <p><strong>Project:</strong> {project} | <strong>Version:</strong> {ver}</p>
-            <h3>Latest Snapshot Summary</h3>
-            {summary_table}
-            <h3>Current Status Breakdown</h3>
-            {status_table}
-            <h3>Current Scope ({len(current_map)} issues)</h3>
-            {current_table}
-            """
-        else:
-            added_rows = [[today, a["key"], a["summary"][:80]] for a in added_detail] or [["-", "-", "No additions detected"]]
-            added_table = html_table(["Date Detected", "Key", "Summary"], added_rows)
+        baseline_rows = [[k, v["summary"][:80], v.get("status", "-")] for k, v in sorted(baseline_issues.items())] or [["-", "No issues in baseline", "-"]]
+        baseline_table = html_table(["Key", "Summary", "Status at Baseline"], baseline_rows)
 
-            removed_rows = [[today, r["key"], "(removed from scope)"] for r in removed_detail] or [["-", "-", "No removals detected"]]
-            removed_table = html_table(["Date Detected", "Key", "Note"], removed_rows)
+        current_rows = [[k, v["summary"][:80], v["status"], v["priority"]] for k, v in sorted(current_map.items())] or [["-", "No issues in scope", "-", "-"]]
+        current_table = html_table(["Key", "Summary", "Status", "Priority"], current_rows)
 
-            regressed_rows = [[today, r["key"], r["summary"][:60], f"{r['prev_status']} -> {r['curr_status']}"] for r in regressed] or [["-", "-", "-", "No regressions detected"]]
-            regressed_table = html_table(["Date Detected", "Key", "Summary", "Status Change"], regressed_rows)
+        added_rows = [[a["key"], a["summary"][:80]] for a in added_detail] or [["-", "No additions since baseline"]]
+        added_table = html_table(["Key", "Summary"], added_rows)
 
-            html = f"""
-        <h2>Auto-Refresh Result — {today}</h2>
+        removed_rows = [[r["key"], r["summary"][:80]] for r in removed_detail] or [["-", "No removals since baseline"]]
+        removed_table = html_table(["Key", "Summary"], removed_rows)
+
+        html = f"""
+        <h2>Release Scope vs. Committed Baseline</h2>
         <p><strong>Project:</strong> {project} | <strong>Version:</strong> {ver}</p>
-        <h3>Latest Snapshot Summary</h3>
+        <h3>Summary</h3>
         {summary_table}
+        <h3>Added Since Baseline ({len(added_detail)})</h3>
+        {added_table}
+        <h3>Removed Since Baseline ({len(removed_detail)})</h3>
+        {removed_table}
         <h3>Current Status Breakdown</h3>
         {status_table}
-        <h3>Added Since Last Snapshot</h3>
-        {added_table}
-        <h3>Removed Since Last Snapshot</h3>
-        {removed_table}
-        <h3>Status Regressions Since Last Snapshot</h3>
-        {regressed_table}
-        <p><em>This section is auto-generated by the Release Scope Deviation Tracker. Last run: {today}</em></p>
+        <h3>Original Committed Scope ({len(baseline_issues)} issues, as of {baseline_date})</h3>
+        {baseline_table}
+        <h3>Current Scope ({len(current_map)} issues)</h3>
+        {current_table}
+        <p><em>This section is auto-generated by the Release Scope Deviation Tracker. Baseline set: {baseline_date}. Last run: {today}</em></p>
         """
 
         title = f"{project} v{ver} - Scope Commitment & Deviation Dashboard"
         update_confluence_page(page_id, title, html)
 
-        # Save new snapshot for next comparison, carrying forward today's
-        # diff so a same-day re-run (duplicate cron fire, manual trigger,
-        # etc.) can redisplay it instead of recomputing (and erasing) it.
-        diff_to_persist = {
-            "date": today,
-            "added": added_detail,
-            "removed": removed_detail,
-            "regressed": regressed,
-        }
-        _save_snapshot(project, ver, current_map, last_diff=diff_to_persist)
-        print(f"Snapshot saved for {project} v{ver}.")
+        _save_snapshot_file(
+            project, ver,
+            baseline_date=baseline_date,
+            baseline_issues=baseline_issues,
+            current_date=today,
+            current_issues=current_map,
+        )
+        print(f"Snapshot saved for {project} v{ver}. (baseline unchanged: {baseline_date})")
 
 
 # ============================================================
