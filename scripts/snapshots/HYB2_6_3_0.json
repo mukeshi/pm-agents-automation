@@ -1,10 +1,10 @@
 {
-  "date": "2026-09-02",
+  "date": "2026-09-03",
   "issues": {
     "HYB2-17365": {
       "summary": "Add SIS APIs and upload 6.3.0 Hybrent API documentation using Postman collection (JSON)",
-      "status": "Dev-Review",
-      "status_category": "indeterminate",
+      "status": "Done/QA Complete",
+      "status_category": "done",
       "priority": "Minor"
     },
     "HYB2-17332": {
@@ -549,7 +549,7 @@
     }
   },
   "last_diff": {
-    "date": "2026-09-02",
+    "date": "2026-09-03",
     "added": [],
     "removed": [],
     "regressed": []

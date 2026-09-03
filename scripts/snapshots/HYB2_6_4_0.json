@@ -1,6 +1,18 @@
 {
-  "date": "2026-09-02",
+  "date": "2026-09-03",
   "issues": {
+    "HYB2-17414": {
+      "summary": "Alignment Issue with Grid View Pop Ups",
+      "status": "To-Do",
+      "status_category": "new",
+      "priority": "Minor"
+    },
+    "HYB2-17409": {
+      "summary": "Optimize Item Search / Print Barcode query \u2014 remove forced item_master index hint for Quick Code search",
+      "status": "To-Do",
+      "status_category": "new",
+      "priority": "Minor"
+    },
     "HYB2-17405": {
       "summary": "Develop and Implement sp_analyze_tables for Multi-Database Instances with More Than 5 Databases",
       "status": "To-Do",
@@ -13,9 +25,15 @@
       "status_category": "new",
       "priority": "Minor"
     },
+    "HYB2-17399": {
+      "summary": "carlisle-medical.hybrent.com > shop > Below par filter > Incorrect par deficit",
+      "status": "To-Do",
+      "status_category": "new",
+      "priority": "Minor"
+    },
     "HYB2-17364": {
       "summary": "Shipment/Order/QOH Upload > SQL Validation Appears When Serial Number or Lot Number Exceeds the Character Limit.",
-      "status": "Ready-For-QA",
+      "status": "In QA",
       "status_category": "indeterminate",
       "priority": "Minor"
     },
@@ -105,8 +123,8 @@
     },
     "HYB2-17316": {
       "summary": "QA Task - FundLTC Prod: Add index on job_id column in stock_transaction_queue_log to resolve lock contention",
-      "status": "To-Do",
-      "status_category": "new",
+      "status": "In-Progress",
+      "status_category": "indeterminate",
       "priority": "Minor"
     },
     "HYB2-17314": {
@@ -141,8 +159,8 @@
     },
     "HYB2-17259": {
       "summary": "Invoices > Out of Office > Invoices are not displayed under Approve Invoices for delegated users who do not have access to the facility added to the Invoice Approval Flow.",
-      "status": "In QA",
-      "status_category": "indeterminate",
+      "status": "Done/QA Complete",
+      "status_category": "done",
       "priority": "Minor"
     },
     "HYB2-17254": {
@@ -225,14 +243,14 @@
     },
     "HYB2-17211": {
       "summary": "Upgrade Font Awesome 6 to 7 in Hybrent UI",
-      "status": "Ready-For-QA",
+      "status": "In QA",
       "status_category": "indeterminate",
       "priority": "Minor"
     },
     "HYB2-17209": {
       "summary": "Implement Performance Improvements for Cycle Counts List API in ScionHealth",
-      "status": "In QA",
-      "status_category": "indeterminate",
+      "status": "Done/QA Complete",
+      "status_category": "done",
       "priority": "Minor"
     },
     "HYB2-17206": {
@@ -249,8 +267,8 @@
     },
     "HYB2-17193": {
       "summary": "Item Search / Print Barcode page is slow when searching by Quick Code (ccoc_prod)",
-      "status": "To-Do",
-      "status_category": "new",
+      "status": "Dev Complete",
+      "status_category": "indeterminate",
       "priority": "Minor"
     },
     "HYB2-17187": {
@@ -273,7 +291,7 @@
     },
     "HYB2-17169": {
       "summary": "Report : Standard billing report >> Taking too much time to load and download report failed.",
-      "status": "In-Progress",
+      "status": "Dev-Review",
       "status_category": "indeterminate",
       "priority": "Minor"
     },
@@ -363,7 +381,7 @@
     },
     "HYB2-17099": {
       "summary": "Unifiedhc > The Medline API process for bulk Vendor Price Updates requires significant time. ",
-      "status": "In-Progress",
+      "status": "Dev-Review",
       "status_category": "indeterminate",
       "priority": "Minor"
     },
@@ -399,8 +417,8 @@
     },
     "HYB2-17021": {
       "summary": "Scanout > The Attach stock button is missing in case there is only 1 stock that also in OPEN state for consecutive scanouts. Auto attach works fine. Label Open Stock is missing.",
-      "status": "Ready-For-QA",
-      "status_category": "indeterminate",
+      "status": "Reopened",
+      "status_category": "new",
       "priority": "Minor"
     },
     "HYB2-16995": {
@@ -465,23 +483,19 @@
     }
   },
   "last_diff": {
-    "date": "2026-09-02",
+    "date": "2026-09-03",
     "added": [
       {
-        "key": "HYB2-17232",
-        "summary": "presbyterianhomes.hybrent.com v3.7.17 > standard billing report issue"
+        "key": "HYB2-17399",
+        "summary": "carlisle-medical.hybrent.com > shop > Below par filter > Incorrect par deficit"
       },
       {
-        "key": "HYB2-17236",
-        "summary": "Develop and Implement sp_analyze_tables for Multi-Database Instances with More Than 5 Databases"
+        "key": "HYB2-17409",
+        "summary": "Optimize Item Search / Print Barcode query \u2014 remove forced item_master index hint for Quick Code search"
       },
       {
-        "key": "HYB2-17404",
-        "summary": "In the Top Vendors Report, the \u2018Location Name\u2019 column should be hidden when the facilities filter is set to \u2018All facilities\u2019."
-      },
-      {
-        "key": "HYB2-17405",
-        "summary": "Develop and Implement sp_analyze_tables for Multi-Database Instances with More Than 5 Databases"
+        "key": "HYB2-17414",
+        "summary": "Alignment Issue with Grid View Pop Ups"
       }
     ],
     "removed": [],
