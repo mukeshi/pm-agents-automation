@@ -482,8 +482,20 @@
       "priority": "Minor"
     }
   },
-  "current_date": "2026-09-03",
+  "current_date": "2026-09-04",
   "current_issues": {
+    "HYB2-17419": {
+      "summary": "HYB2-17169 2nd Query: Standard billing report >> Taking too much time to load and download report failed.",
+      "status": "Dev Complete",
+      "status_category": "indeterminate",
+      "priority": "Minor"
+    },
+    "HYB2-17418": {
+      "summary": "HYB2-17169 Query 1 : Standard billing report >> Taking too much time to load and download report failed.",
+      "status": "Dev Complete",
+      "status_category": "indeterminate",
+      "priority": "Minor"
+    },
     "HYB2-17414": {
       "summary": "Alignment Issue with Grid View Pop Ups",
       "status": "To-Do",
@@ -522,8 +534,8 @@
     },
     "HYB2-17363": {
       "summary": "Bill and Replace > Backjob Fails When Serial Number or Lot Number Exceeds the Character Limit.",
-      "status": "In QA",
-      "status_category": "indeterminate",
+      "status": "Done/QA Complete",
+      "status_category": "done",
       "priority": "Minor"
     },
     "HYB2-17361": {
@@ -816,7 +828,7 @@
     },
     "HYB2-17161": {
       "summary": "Cart Migration: Quantity Management (Increment/Decrement/Direct Input)",
-      "status": "UI Development",
+      "status": "Dev-Review",
       "status_category": "indeterminate",
       "priority": "Minor"
     },
@@ -840,8 +852,8 @@
     },
     "HYB2-17145": {
       "summary": "Cart Migration: Shared Cart Service Layer & TypeScript Models",
-      "status": "To-Do",
-      "status_category": "new",
+      "status": "UI Development",
+      "status_category": "indeterminate",
       "priority": "Minor"
     },
     "HYB2-17136": {
