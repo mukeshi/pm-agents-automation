@@ -548,7 +548,7 @@
       "priority": "Minor"
     }
   },
-  "current_date": "2026-09-04",
+  "current_date": "2026-09-05",
   "current_issues": {
     "HYB2-17365": {
       "summary": "Add SIS APIs and upload 6.3.0 Hybrent API documentation using Postman collection (JSON)",

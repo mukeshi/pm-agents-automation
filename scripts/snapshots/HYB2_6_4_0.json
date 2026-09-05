@@ -482,7 +482,7 @@
       "priority": "Minor"
     }
   },
-  "current_date": "2026-09-04",
+  "current_date": "2026-09-05",
   "current_issues": {
     "HYB2-17419": {
       "summary": "HYB2-17169 2nd Query: Standard billing report >> Taking too much time to load and download report failed.",
@@ -528,8 +528,8 @@
     },
     "HYB2-17364": {
       "summary": "Shipment/Order/QOH Upload > SQL Validation Appears When Serial Number or Lot Number Exceeds the Character Limit.",
-      "status": "Reopened",
-      "status_category": "new",
+      "status": "Dev-Review",
+      "status_category": "indeterminate",
       "priority": "Minor"
     },
     "HYB2-17363": {
@@ -786,8 +786,8 @@
     },
     "HYB2-17169": {
       "summary": "Report : Standard billing report >> Taking too much time to load and download report failed.",
-      "status": "Dev-Review",
-      "status_category": "indeterminate",
+      "status": "Done/QA Complete",
+      "status_category": "done",
       "priority": "Minor"
     },
     "HYB2-17167": {
@@ -906,8 +906,8 @@
     },
     "HYB2-17066": {
       "summary": "Scionhealth > Orders Listing > Search by SKU not working \u2014 progress bar stuck, API requests cancelled",
-      "status": "To-Do",
-      "status_category": "new",
+      "status": "Done/QA Complete",
+      "status_category": "done",
       "priority": "Major"
     },
     "HYB2-17021": {
@@ -924,8 +924,8 @@
     },
     "HYB2-16923": {
       "summary": "Increase Order Approval Flow Maximum Levels \u2014 Apply Same Limit as Invoice Approval Flow",
-      "status": "In QA",
-      "status_category": "indeterminate",
+      "status": "Done/QA Complete",
+      "status_category": "done",
       "priority": "Minor"
     },
     "HYB2-16731": {
@@ -948,14 +948,14 @@
     },
     "HYB2-16333": {
       "summary": "API Performance Improvement > UserService's updateUsersModuleAccessJson method ",
-      "status": "Reopened",
-      "status_category": "new",
+      "status": "In-Progress",
+      "status_category": "indeterminate",
       "priority": "Major"
     },
     "HYB2-16213": {
       "summary": "Unify Lot and Serial Number limits in the application ",
-      "status": "Reopened",
-      "status_category": "new",
+      "status": "Dev-Review",
+      "status_category": "indeterminate",
       "priority": "Minor"
     },
     "HYB2-16140": {
