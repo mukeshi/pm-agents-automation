@@ -482,7 +482,7 @@
       "priority": "Minor"
     }
   },
-  "current_date": "2026-09-05",
+  "current_date": "2026-09-06",
   "current_issues": {
     "HYB2-17419": {
       "summary": "HYB2-17169 2nd Query: Standard billing report >> Taking too much time to load and download report failed.",
