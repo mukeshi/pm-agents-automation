@@ -482,7 +482,7 @@
       "priority": "Minor"
     }
   },
-  "current_date": "2026-09-06",
+  "current_date": "2026-09-07",
   "current_issues": {
     "HYB2-17419": {
       "summary": "HYB2-17169 2nd Query: Standard billing report >> Taking too much time to load and download report failed.",
@@ -876,7 +876,7 @@
     },
     "HYB2-17099": {
       "summary": "Unifiedhc > The Medline API process for bulk Vendor Price Updates requires significant time. ",
-      "status": "Dev-Review",
+      "status": "Blocked",
       "status_category": "indeterminate",
       "priority": "Minor"
     },
