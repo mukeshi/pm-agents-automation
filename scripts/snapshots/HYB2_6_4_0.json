@@ -482,13 +482,37 @@
       "priority": "Minor"
     }
   },
-  "current_date": "2026-09-08",
+  "current_date": "2026-09-09",
   "current_issues": {
+    "HYB2-17445": {
+      "summary": "Performance Degradation on Par Value Replacement Cost Report Page (~46 sec Load Time) \u2013 scionhealth_prod",
+      "status": "To-Do",
+      "status_category": "new",
+      "priority": "Minor"
+    },
     "HYB2-17427": {
       "summary": "Item Change Log > Tooltip Should Display \"Update Vendor Price\" Instead of \"Update Medline Price\"",
       "status": "To-Do",
       "status_category": "new",
       "priority": "Trivial"
+    },
+    "HYB2-17426": {
+      "summary": "Item Change Log > Stock Status Updates Are Not Logged When Updated Through Update Vendor Pricing",
+      "status": "To-Do",
+      "status_category": "new",
+      "priority": "Minor"
+    },
+    "HYB2-17425": {
+      "summary": "Reports > Freehand Report: \"Import Vendor Bill Only Items\" appears to be selected incorrectly in the Admin menu",
+      "status": "To-Do",
+      "status_category": "new",
+      "priority": "Trivial"
+    },
+    "HYB2-17420": {
+      "summary": "Invoice Approval Flow > Rearrange Steps are not working as expected.",
+      "status": "To-Do",
+      "status_category": "new",
+      "priority": "Minor"
     },
     "HYB2-17419": {
       "summary": "HYB2-17169 2nd Query: Standard billing report >> Taking too much time to load and download report failed.",
@@ -546,8 +570,8 @@
     },
     "HYB2-17361": {
       "summary": "UI changes of HYB2-17243 - Order Approval > Revamping the UI/UX of 'Order Approval Flow' Feature",
-      "status": "In-Progress",
-      "status_category": "indeterminate",
+      "status": "Done/QA Complete",
+      "status_category": "done",
       "priority": "Minor"
     },
     "HYB2-17356": {
@@ -611,7 +635,7 @@
       "priority": "Minor"
     },
     "HYB2-17322": {
-      "summary": "QA Task - Unifiedhc > The Medline API process for bulk Vendor Price Updates requires significant time.",
+      "summary": "QA Task > 2026Q2S19 >  HYB2-17099 > Unifiedhc > The Medline API process for bulk Vendor Price Updates requires significant time.",
       "status": "To-Do",
       "status_category": "new",
       "priority": "Minor"
@@ -624,8 +648,8 @@
     },
     "HYB2-17316": {
       "summary": "QA Task - FundLTC Prod: Add index on job_id column in stock_transaction_queue_log to resolve lock contention",
-      "status": "In-Progress",
-      "status_category": "indeterminate",
+      "status": "Done/QA Complete",
+      "status_category": "done",
       "priority": "Minor"
     },
     "HYB2-17314": {
@@ -672,8 +696,8 @@
     },
     "HYB2-17251": {
       "summary": "Add UI setting to select prediction dates",
-      "status": "Ready-For-QA",
-      "status_category": "indeterminate",
+      "status": "Done/QA Complete",
+      "status_category": "done",
       "priority": "Minor"
     },
     "HYB2-17247": {
@@ -744,8 +768,8 @@
     },
     "HYB2-17211": {
       "summary": "Upgrade Font Awesome 6 to 7 in Hybrent UI",
-      "status": "In QA",
-      "status_category": "indeterminate",
+      "status": "Done/QA Complete",
+      "status_category": "done",
       "priority": "Minor"
     },
     "HYB2-17209": {
@@ -756,8 +780,8 @@
     },
     "HYB2-17206": {
       "summary": "Performance issue->It takes 5+ minutes to apply lot and expiry to all the item quantity(20000) using apply all option.",
-      "status": "Ready-For-QA",
-      "status_category": "indeterminate",
+      "status": "Done/QA Complete",
+      "status_category": "done",
       "priority": "Minor"
     },
     "HYB2-17194": {
@@ -858,8 +882,8 @@
     },
     "HYB2-17145": {
       "summary": "Cart Migration: Shared Cart Service Layer & TypeScript Models",
-      "status": "Dev-Review",
-      "status_category": "indeterminate",
+      "status": "Done/QA Complete",
+      "status_category": "done",
       "priority": "Minor"
     },
     "HYB2-17136": {
@@ -888,14 +912,14 @@
     },
     "HYB2-17087": {
       "summary": "User update->SQL STATE ERROR while updating admin users",
-      "status": "To-Do",
-      "status_category": "new",
+      "status": "In-Progress",
+      "status_category": "indeterminate",
       "priority": "Minor"
     },
     "HYB2-17083": {
       "summary": "Inventory Transfer > Transfer item with L/S/E/ tracking > stock decrement reflects Lot and Exp but increment fails to carry over the stock (manual and auto selecting stock)",
-      "status": "To-Do",
-      "status_category": "new",
+      "status": "In-Progress",
+      "status_category": "indeterminate",
       "priority": "Major"
     },
     "HYB2-17078": {
@@ -918,8 +942,8 @@
     },
     "HYB2-17021": {
       "summary": "Scanout > The Attach stock button is missing in case there is only 1 stock that also in OPEN state for consecutive scanouts. Auto attach works fine. Label Open Stock is missing.",
-      "status": "Ready-For-QA",
-      "status_category": "indeterminate",
+      "status": "Done/QA Complete",
+      "status_category": "done",
       "priority": "Minor"
     },
     "HYB2-16995": {
@@ -954,8 +978,8 @@
     },
     "HYB2-16333": {
       "summary": "API Performance Improvement > UserService's updateUsersModuleAccessJson method ",
-      "status": "Ready-For-QA",
-      "status_category": "indeterminate",
+      "status": "Done/QA Complete",
+      "status_category": "done",
       "priority": "Major"
     },
     "HYB2-16213": {
