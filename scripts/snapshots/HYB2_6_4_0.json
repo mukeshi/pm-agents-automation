@@ -482,7 +482,7 @@
       "priority": "Minor"
     }
   },
-  "current_date": "2026-09-09",
+  "current_date": "2026-09-10",
   "current_issues": {
     "HYB2-17445": {
       "summary": "Performance Degradation on Par Value Replacement Cost Report Page (~46 sec Load Time) \u2013 scionhealth_prod",
@@ -504,8 +504,8 @@
     },
     "HYB2-17425": {
       "summary": "Reports > Freehand Report: \"Import Vendor Bill Only Items\" appears to be selected incorrectly in the Admin menu",
-      "status": "To-Do",
-      "status_category": "new",
+      "status": "UI Development",
+      "status_category": "indeterminate",
       "priority": "Trivial"
     },
     "HYB2-17420": {
@@ -532,10 +532,28 @@
       "status_category": "new",
       "priority": "Minor"
     },
-    "HYB2-17409": {
-      "summary": "Optimize Item Search / Print Barcode query \u2014 remove forced item_master index hint for Quick Code search",
+    "HYB2-17413": {
+      "summary": "User Management > Default join date to current date when adding a user",
       "status": "To-Do",
       "status_category": "new",
+      "priority": "Minor"
+    },
+    "HYB2-17412": {
+      "summary": "Vendor Management > Add notes field to vendor records",
+      "status": "To-Do",
+      "status_category": "new",
+      "priority": "Minor"
+    },
+    "HYB2-17410": {
+      "summary": "Punchout / EDI 810 > Carry vendor-provided GL codes to invoices",
+      "status": "To-Do",
+      "status_category": "new",
+      "priority": "Minor"
+    },
+    "HYB2-17409": {
+      "summary": "Optimize Item Search / Print Barcode query \u2014 remove forced item_master index hint for Quick Code search",
+      "status": "Dev-Review",
+      "status_category": "indeterminate",
       "priority": "Minor"
     },
     "HYB2-17405": {
@@ -546,8 +564,8 @@
     },
     "HYB2-17404": {
       "summary": "In the Top Vendors Report, the \u2018Location Name\u2019 column should be hidden when the facilities filter is set to \u2018All facilities\u2019.",
-      "status": "To-Do",
-      "status_category": "new",
+      "status": "UI Development",
+      "status_category": "indeterminate",
       "priority": "Minor"
     },
     "HYB2-17399": {
@@ -658,12 +676,6 @@
       "status_category": "new",
       "priority": "Minor"
     },
-    "HYB2-17309": {
-      "summary": "QA Task - Cart Migration: Quantity Management (Increment/Decrement/Direct Input)",
-      "status": "To-Do",
-      "status_category": "new",
-      "priority": "Minor"
-    },
     "HYB2-17294": {
       "summary": "Reduce hybrent-react production bundle size",
       "status": "To-Do",
@@ -678,8 +690,8 @@
     },
     "HYB2-17270": {
       "summary": "Application Testing and Production Implementation for PO Adjustment API Query Optimization",
-      "status": "To-Do",
-      "status_category": "new",
+      "status": "In-Progress",
+      "status_category": "indeterminate",
       "priority": "Minor"
     },
     "HYB2-17259": {
@@ -714,8 +726,8 @@
     },
     "HYB2-17243": {
       "summary": "Order Approval > Revamping the UI/UX of 'Order Approval Flow' Feature",
-      "status": "To-Do",
-      "status_category": "new",
+      "status": "In-Progress",
+      "status_category": "indeterminate",
       "priority": "Minor"
     },
     "HYB2-17237": {
@@ -738,8 +750,8 @@
     },
     "HYB2-17230": {
       "summary": "AI Prediction - LightGBM: 28/60 Days Extension",
-      "status": "Ready-For-QA",
-      "status_category": "indeterminate",
+      "status": "Done/QA Complete",
+      "status_category": "done",
       "priority": "Minor"
     },
     "HYB2-17223": {
@@ -822,8 +834,8 @@
     },
     "HYB2-17167": {
       "summary": "Cart Migration: Physician, Stock Info, Custom Fields & Auxiliary Features",
-      "status": "To-Do",
-      "status_category": "new",
+      "status": "UI Development",
+      "status_category": "indeterminate",
       "priority": "Minor"
     },
     "HYB2-17166": {
@@ -912,13 +924,13 @@
     },
     "HYB2-17087": {
       "summary": "User update->SQL STATE ERROR while updating admin users",
-      "status": "In-Progress",
-      "status_category": "indeterminate",
+      "status": "Done/QA Complete",
+      "status_category": "done",
       "priority": "Minor"
     },
     "HYB2-17083": {
       "summary": "Inventory Transfer > Transfer item with L/S/E/ tracking > stock decrement reflects Lot and Exp but increment fails to carry over the stock (manual and auto selecting stock)",
-      "status": "In-Progress",
+      "status": "Dev-Review",
       "status_category": "indeterminate",
       "priority": "Major"
     },
