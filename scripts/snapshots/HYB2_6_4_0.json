@@ -482,8 +482,20 @@
       "priority": "Minor"
     }
   },
-  "current_date": "2026-09-10",
+  "current_date": "2026-09-11",
   "current_issues": {
+    "HYB2-17450": {
+      "summary": "New Cart - \"Account Setup\" and \"Check Item Availability\" options for Vendor are missing on the new UI.",
+      "status": "UI Development",
+      "status_category": "indeterminate",
+      "priority": "Minor"
+    },
+    "HYB2-17449": {
+      "summary": "New Cart - Notes and Documents attachment counts are not displayed in the new Cart module.",
+      "status": "To-Do",
+      "status_category": "new",
+      "priority": "Minor"
+    },
     "HYB2-17445": {
       "summary": "Performance Degradation on Par Value Replacement Cost Report Page (~46 sec Load Time) \u2013 scionhealth_prod",
       "status": "To-Do",
@@ -492,8 +504,8 @@
     },
     "HYB2-17427": {
       "summary": "Item Change Log > Tooltip Should Display \"Update Vendor Price\" Instead of \"Update Medline Price\"",
-      "status": "To-Do",
-      "status_category": "new",
+      "status": "In-Progress",
+      "status_category": "indeterminate",
       "priority": "Trivial"
     },
     "HYB2-17426": {
@@ -504,7 +516,7 @@
     },
     "HYB2-17425": {
       "summary": "Reports > Freehand Report: \"Import Vendor Bill Only Items\" appears to be selected incorrectly in the Admin menu",
-      "status": "UI Development",
+      "status": "In QA",
       "status_category": "indeterminate",
       "priority": "Trivial"
     },
@@ -534,25 +546,25 @@
     },
     "HYB2-17413": {
       "summary": "User Management > Default join date to current date when adding a user",
-      "status": "To-Do",
-      "status_category": "new",
+      "status": "In QA",
+      "status_category": "indeterminate",
       "priority": "Minor"
     },
     "HYB2-17412": {
       "summary": "Vendor Management > Add notes field to vendor records",
-      "status": "To-Do",
-      "status_category": "new",
+      "status": "In-Progress",
+      "status_category": "indeterminate",
       "priority": "Minor"
     },
     "HYB2-17410": {
       "summary": "Punchout / EDI 810 > Carry vendor-provided GL codes to invoices",
-      "status": "To-Do",
-      "status_category": "new",
+      "status": "In-Progress",
+      "status_category": "indeterminate",
       "priority": "Minor"
     },
     "HYB2-17409": {
       "summary": "Optimize Item Search / Print Barcode query \u2014 remove forced item_master index hint for Quick Code search",
-      "status": "Dev-Review",
+      "status": "Ready-For-QA",
       "status_category": "indeterminate",
       "priority": "Minor"
     },
@@ -564,7 +576,7 @@
     },
     "HYB2-17404": {
       "summary": "In the Top Vendors Report, the \u2018Location Name\u2019 column should be hidden when the facilities filter is set to \u2018All facilities\u2019.",
-      "status": "UI Development",
+      "status": "In QA",
       "status_category": "indeterminate",
       "priority": "Minor"
     },
@@ -600,8 +612,8 @@
     },
     "HYB2-17355": {
       "summary": "Security: Path traversal vulnerability in StockTransferNoteController::saveBase64Image (SonarCloud Blocker)",
-      "status": "To-Do",
-      "status_category": "new",
+      "status": "In-Progress",
+      "status_category": "indeterminate",
       "priority": "Critical"
     },
     "HYB2-17350": {
@@ -690,7 +702,7 @@
     },
     "HYB2-17270": {
       "summary": "Application Testing and Production Implementation for PO Adjustment API Query Optimization",
-      "status": "In-Progress",
+      "status": "Dev-Review",
       "status_category": "indeterminate",
       "priority": "Minor"
     },
@@ -726,7 +738,7 @@
     },
     "HYB2-17243": {
       "summary": "Order Approval > Revamping the UI/UX of 'Order Approval Flow' Feature",
-      "status": "In-Progress",
+      "status": "Dev-Review",
       "status_category": "indeterminate",
       "priority": "Minor"
     },
@@ -930,7 +942,7 @@
     },
     "HYB2-17083": {
       "summary": "Inventory Transfer > Transfer item with L/S/E/ tracking > stock decrement reflects Lot and Exp but increment fails to carry over the stock (manual and auto selecting stock)",
-      "status": "Dev-Review",
+      "status": "Ready-For-QA",
       "status_category": "indeterminate",
       "priority": "Major"
     },
