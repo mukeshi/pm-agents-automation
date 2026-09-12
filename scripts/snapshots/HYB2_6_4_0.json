@@ -482,18 +482,18 @@
       "priority": "Minor"
     }
   },
-  "current_date": "2026-09-11",
+  "current_date": "2026-09-12",
   "current_issues": {
     "HYB2-17450": {
       "summary": "New Cart - \"Account Setup\" and \"Check Item Availability\" options for Vendor are missing on the new UI.",
-      "status": "UI Development",
+      "status": "Dev-Review",
       "status_category": "indeterminate",
       "priority": "Minor"
     },
     "HYB2-17449": {
       "summary": "New Cart - Notes and Documents attachment counts are not displayed in the new Cart module.",
-      "status": "To-Do",
-      "status_category": "new",
+      "status": "Dev-Review",
+      "status_category": "indeterminate",
       "priority": "Minor"
     },
     "HYB2-17445": {
@@ -504,20 +504,20 @@
     },
     "HYB2-17427": {
       "summary": "Item Change Log > Tooltip Should Display \"Update Vendor Price\" Instead of \"Update Medline Price\"",
-      "status": "In-Progress",
+      "status": "Ready-For-QA",
       "status_category": "indeterminate",
       "priority": "Trivial"
     },
     "HYB2-17426": {
       "summary": "Item Change Log > Stock Status Updates Are Not Logged When Updated Through Update Vendor Pricing",
-      "status": "To-Do",
-      "status_category": "new",
+      "status": "In-Progress",
+      "status_category": "indeterminate",
       "priority": "Minor"
     },
     "HYB2-17425": {
       "summary": "Reports > Freehand Report: \"Import Vendor Bill Only Items\" appears to be selected incorrectly in the Admin menu",
-      "status": "In QA",
-      "status_category": "indeterminate",
+      "status": "Done/QA Complete",
+      "status_category": "done",
       "priority": "Trivial"
     },
     "HYB2-17420": {
@@ -546,8 +546,8 @@
     },
     "HYB2-17413": {
       "summary": "User Management > Default join date to current date when adding a user",
-      "status": "In QA",
-      "status_category": "indeterminate",
+      "status": "Done/QA Complete",
+      "status_category": "done",
       "priority": "Minor"
     },
     "HYB2-17412": {
@@ -564,7 +564,7 @@
     },
     "HYB2-17409": {
       "summary": "Optimize Item Search / Print Barcode query \u2014 remove forced item_master index hint for Quick Code search",
-      "status": "Ready-For-QA",
+      "status": "In QA",
       "status_category": "indeterminate",
       "priority": "Minor"
     },
@@ -612,7 +612,7 @@
     },
     "HYB2-17355": {
       "summary": "Security: Path traversal vulnerability in StockTransferNoteController::saveBase64Image (SonarCloud Blocker)",
-      "status": "In-Progress",
+      "status": "Dev-Review",
       "status_category": "indeterminate",
       "priority": "Critical"
     },
@@ -738,7 +738,7 @@
     },
     "HYB2-17243": {
       "summary": "Order Approval > Revamping the UI/UX of 'Order Approval Flow' Feature",
-      "status": "Dev-Review",
+      "status": "In QA",
       "status_category": "indeterminate",
       "priority": "Minor"
     },
@@ -942,8 +942,8 @@
     },
     "HYB2-17083": {
       "summary": "Inventory Transfer > Transfer item with L/S/E/ tracking > stock decrement reflects Lot and Exp but increment fails to carry over the stock (manual and auto selecting stock)",
-      "status": "Ready-For-QA",
-      "status_category": "indeterminate",
+      "status": "Done/QA Complete",
+      "status_category": "done",
       "priority": "Major"
     },
     "HYB2-17078": {
