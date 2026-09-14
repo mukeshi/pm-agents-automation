@@ -482,8 +482,14 @@
       "priority": "Minor"
     }
   },
-  "current_date": "2026-09-13",
+  "current_date": "2026-09-14",
   "current_issues": {
+    "HYB2-17460": {
+      "summary": "QA Observations regarding HYB2-17243 - Order Approval > Revamping the UI/UX of 'Order Approval Flow' Feature",
+      "status": "To-Do",
+      "status_category": "new",
+      "priority": "Minor"
+    },
     "HYB2-17450": {
       "summary": "New Cart - \"Account Setup\" and \"Check Item Availability\" options for Vendor are missing on the new UI.",
       "status": "Dev-Review",
@@ -702,7 +708,7 @@
     },
     "HYB2-17270": {
       "summary": "Application Testing and Production Implementation for PO Adjustment API Query Optimization",
-      "status": "Dev-Review",
+      "status": "In QA",
       "status_category": "indeterminate",
       "priority": "Minor"
     },
@@ -846,7 +852,7 @@
     },
     "HYB2-17167": {
       "summary": "Cart Migration: Physician, Stock Info, Custom Fields & Auxiliary Features",
-      "status": "UI Development",
+      "status": "Dev-Review",
       "status_category": "indeterminate",
       "priority": "Minor"
     },
@@ -870,8 +876,8 @@
     },
     "HYB2-17163": {
       "summary": "Cart Migration: Generate PO Flow with Selective Vendor Generation",
-      "status": "To-Do",
-      "status_category": "new",
+      "status": "UI Development",
+      "status_category": "indeterminate",
       "priority": "Minor"
     },
     "HYB2-17162": {
