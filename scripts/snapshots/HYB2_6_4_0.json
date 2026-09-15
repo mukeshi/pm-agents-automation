@@ -482,23 +482,29 @@
       "priority": "Minor"
     }
   },
-  "current_date": "2026-09-14",
+  "current_date": "2026-09-15",
   "current_issues": {
-    "HYB2-17460": {
-      "summary": "QA Observations regarding HYB2-17243 - Order Approval > Revamping the UI/UX of 'Order Approval Flow' Feature",
+    "HYB2-17461": {
+      "summary": "Long item name is not wrapping on Order Detail and Print Barcode screens.",
       "status": "To-Do",
       "status_category": "new",
       "priority": "Minor"
     },
+    "HYB2-17460": {
+      "summary": "QA Observations regarding HYB2-17243 - Order Approval > Revamping the UI/UX of 'Order Approval Flow' Feature",
+      "status": "Ready-For-QA",
+      "status_category": "indeterminate",
+      "priority": "Minor"
+    },
     "HYB2-17450": {
       "summary": "New Cart - \"Account Setup\" and \"Check Item Availability\" options for Vendor are missing on the new UI.",
-      "status": "Dev-Review",
-      "status_category": "indeterminate",
+      "status": "Done/QA Complete",
+      "status_category": "done",
       "priority": "Minor"
     },
     "HYB2-17449": {
       "summary": "New Cart - Notes and Documents attachment counts are not displayed in the new Cart module.",
-      "status": "Dev-Review",
+      "status": "In QA",
       "status_category": "indeterminate",
       "priority": "Minor"
     },
@@ -510,13 +516,13 @@
     },
     "HYB2-17427": {
       "summary": "Item Change Log > Tooltip Should Display \"Update Vendor Price\" Instead of \"Update Medline Price\"",
-      "status": "Ready-For-QA",
-      "status_category": "indeterminate",
+      "status": "Done/QA Complete",
+      "status_category": "done",
       "priority": "Trivial"
     },
     "HYB2-17426": {
       "summary": "Item Change Log > Stock Status Updates Are Not Logged When Updated Through Update Vendor Pricing",
-      "status": "In-Progress",
+      "status": "Dev-Review",
       "status_category": "indeterminate",
       "priority": "Minor"
     },
@@ -528,8 +534,8 @@
     },
     "HYB2-17420": {
       "summary": "Invoice Approval Flow > Rearrange Steps are not working as expected.",
-      "status": "To-Do",
-      "status_category": "new",
+      "status": "In-Progress",
+      "status_category": "indeterminate",
       "priority": "Minor"
     },
     "HYB2-17419": {
@@ -546,8 +552,8 @@
     },
     "HYB2-17414": {
       "summary": "Alignment Issue with Grid View Pop Ups",
-      "status": "To-Do",
-      "status_category": "new",
+      "status": "In-Progress",
+      "status_category": "indeterminate",
       "priority": "Minor"
     },
     "HYB2-17413": {
@@ -618,7 +624,7 @@
     },
     "HYB2-17355": {
       "summary": "Security: Path traversal vulnerability in StockTransferNoteController::saveBase64Image (SonarCloud Blocker)",
-      "status": "Dev-Review",
+      "status": "Ready-For-QA",
       "status_category": "indeterminate",
       "priority": "Critical"
     },
@@ -660,8 +666,8 @@
     },
     "HYB2-17337": {
       "summary": "QA Task - Cart Migration: Physician, Stock Info, Custom Fields & Auxiliary Features",
-      "status": "To-Do",
-      "status_category": "new",
+      "status": "In-Progress",
+      "status_category": "indeterminate",
       "priority": "Minor"
     },
     "HYB2-17334": {
@@ -696,8 +702,8 @@
     },
     "HYB2-17294": {
       "summary": "Reduce hybrent-react production bundle size",
-      "status": "To-Do",
-      "status_category": "new",
+      "status": "Dev-Review",
+      "status_category": "indeterminate",
       "priority": "Minor"
     },
     "HYB2-17293": {
@@ -708,8 +714,8 @@
     },
     "HYB2-17270": {
       "summary": "Application Testing and Production Implementation for PO Adjustment API Query Optimization",
-      "status": "In QA",
-      "status_category": "indeterminate",
+      "status": "Done/QA Complete",
+      "status_category": "done",
       "priority": "Minor"
     },
     "HYB2-17259": {
@@ -852,7 +858,7 @@
     },
     "HYB2-17167": {
       "summary": "Cart Migration: Physician, Stock Info, Custom Fields & Auxiliary Features",
-      "status": "Dev-Review",
+      "status": "In QA",
       "status_category": "indeterminate",
       "priority": "Minor"
     },
