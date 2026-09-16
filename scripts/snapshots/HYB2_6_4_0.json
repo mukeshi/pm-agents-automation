@@ -482,8 +482,14 @@
       "priority": "Minor"
     }
   },
-  "current_date": "2026-09-15",
+  "current_date": "2026-09-16",
   "current_issues": {
+    "HYB2-17467": {
+      "summary": "Apply Query Performance Optimization Changes \u2013 Standard Billing Report",
+      "status": "To-Do",
+      "status_category": "new",
+      "priority": "Minor"
+    },
     "HYB2-17461": {
       "summary": "Long item name is not wrapping on Order Detail and Print Barcode screens.",
       "status": "To-Do",
@@ -492,8 +498,8 @@
     },
     "HYB2-17460": {
       "summary": "QA Observations regarding HYB2-17243 - Order Approval > Revamping the UI/UX of 'Order Approval Flow' Feature",
-      "status": "Ready-For-QA",
-      "status_category": "indeterminate",
+      "status": "Done/QA Complete",
+      "status_category": "done",
       "priority": "Minor"
     },
     "HYB2-17450": {
@@ -504,14 +510,14 @@
     },
     "HYB2-17449": {
       "summary": "New Cart - Notes and Documents attachment counts are not displayed in the new Cart module.",
-      "status": "In QA",
-      "status_category": "indeterminate",
+      "status": "Done/QA Complete",
+      "status_category": "done",
       "priority": "Minor"
     },
     "HYB2-17445": {
       "summary": "Performance Degradation on Par Value Replacement Cost Report Page (~46 sec Load Time) \u2013 scionhealth_prod",
-      "status": "To-Do",
-      "status_category": "new",
+      "status": "In-Progress",
+      "status_category": "indeterminate",
       "priority": "Minor"
     },
     "HYB2-17427": {
@@ -522,8 +528,8 @@
     },
     "HYB2-17426": {
       "summary": "Item Change Log > Stock Status Updates Are Not Logged When Updated Through Update Vendor Pricing",
-      "status": "Dev-Review",
-      "status_category": "indeterminate",
+      "status": "Done/QA Complete",
+      "status_category": "done",
       "priority": "Minor"
     },
     "HYB2-17425": {
@@ -534,7 +540,7 @@
     },
     "HYB2-17420": {
       "summary": "Invoice Approval Flow > Rearrange Steps are not working as expected.",
-      "status": "In-Progress",
+      "status": "In QA",
       "status_category": "indeterminate",
       "priority": "Minor"
     },
@@ -552,7 +558,7 @@
     },
     "HYB2-17414": {
       "summary": "Alignment Issue with Grid View Pop Ups",
-      "status": "In-Progress",
+      "status": "Dev-Review",
       "status_category": "indeterminate",
       "priority": "Minor"
     },
@@ -564,13 +570,13 @@
     },
     "HYB2-17412": {
       "summary": "Vendor Management > Add notes field to vendor records",
-      "status": "In-Progress",
+      "status": "Dev-Review",
       "status_category": "indeterminate",
       "priority": "Minor"
     },
     "HYB2-17410": {
       "summary": "Punchout / EDI 810 > Carry vendor-provided GL codes to invoices",
-      "status": "In-Progress",
+      "status": "Dev-Review",
       "status_category": "indeterminate",
       "priority": "Minor"
     },
@@ -588,8 +594,8 @@
     },
     "HYB2-17404": {
       "summary": "In the Top Vendors Report, the \u2018Location Name\u2019 column should be hidden when the facilities filter is set to \u2018All facilities\u2019.",
-      "status": "In QA",
-      "status_category": "indeterminate",
+      "status": "Done/QA Complete",
+      "status_category": "done",
       "priority": "Minor"
     },
     "HYB2-17399": {
@@ -658,6 +664,12 @@
       "status_category": "new",
       "priority": "Minor"
     },
+    "HYB2-17339": {
+      "summary": "Standard Billing Report \u2013 Optimize Patient Count Query Performance \u2013 fundltc_prod",
+      "status": "Dev Complete",
+      "status_category": "indeterminate",
+      "priority": "Minor"
+    },
     "HYB2-17338": {
       "summary": "QA Task - Cart Migration: Generate PO Flow with Selective Vendor Generation",
       "status": "To-Do",
@@ -666,8 +678,8 @@
     },
     "HYB2-17337": {
       "summary": "QA Task - Cart Migration: Physician, Stock Info, Custom Fields & Auxiliary Features",
-      "status": "In-Progress",
-      "status_category": "indeterminate",
+      "status": "Done/QA Complete",
+      "status_category": "done",
       "priority": "Minor"
     },
     "HYB2-17334": {
@@ -756,8 +768,8 @@
     },
     "HYB2-17237": {
       "summary": "Inventory QOH upload>QOH Upload allows stock reduction of more than 20K without validation.",
-      "status": "To-Do",
-      "status_category": "new",
+      "status": "In-Progress",
+      "status_category": "indeterminate",
       "priority": "Minor"
     },
     "HYB2-17236": {
@@ -858,8 +870,8 @@
     },
     "HYB2-17167": {
       "summary": "Cart Migration: Physician, Stock Info, Custom Fields & Auxiliary Features",
-      "status": "In QA",
-      "status_category": "indeterminate",
+      "status": "Done/QA Complete",
+      "status_category": "done",
       "priority": "Minor"
     },
     "HYB2-17166": {
