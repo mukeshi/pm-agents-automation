@@ -482,8 +482,20 @@
       "priority": "Minor"
     }
   },
-  "current_date": "2026-09-16",
+  "current_date": "2026-09-17",
   "current_issues": {
+    "HYB2-17470": {
+      "summary": "New Cart - No pop-up appears when generating a PO for an item without a vendor Account setup.",
+      "status": "To-Do",
+      "status_category": "new",
+      "priority": "Minor"
+    },
+    "HYB2-17469": {
+      "summary": "SQL error occurs when the user tries to enter a large value in the PO Amount Limit field. ",
+      "status": "To-Do",
+      "status_category": "new",
+      "priority": "Minor"
+    },
     "HYB2-17467": {
       "summary": "Apply Query Performance Optimization Changes \u2013 Standard Billing Report",
       "status": "To-Do",
@@ -540,8 +552,8 @@
     },
     "HYB2-17420": {
       "summary": "Invoice Approval Flow > Rearrange Steps are not working as expected.",
-      "status": "In QA",
-      "status_category": "indeterminate",
+      "status": "Done/QA Complete",
+      "status_category": "done",
       "priority": "Minor"
     },
     "HYB2-17419": {
@@ -558,7 +570,7 @@
     },
     "HYB2-17414": {
       "summary": "Alignment Issue with Grid View Pop Ups",
-      "status": "Dev-Review",
+      "status": "In QA",
       "status_category": "indeterminate",
       "priority": "Minor"
     },
@@ -570,7 +582,7 @@
     },
     "HYB2-17412": {
       "summary": "Vendor Management > Add notes field to vendor records",
-      "status": "Dev-Review",
+      "status": "In QA",
       "status_category": "indeterminate",
       "priority": "Minor"
     },
@@ -624,14 +636,14 @@
     },
     "HYB2-17356": {
       "summary": "Code Quality: Remove variable variables ($$) usage in SendToAccountingService (SonarCloud Blocker x3)",
-      "status": "To-Do",
-      "status_category": "new",
+      "status": "In-Progress",
+      "status_category": "indeterminate",
       "priority": "Critical"
     },
     "HYB2-17355": {
       "summary": "Security: Path traversal vulnerability in StockTransferNoteController::saveBase64Image (SonarCloud Blocker)",
-      "status": "Ready-For-QA",
-      "status_category": "indeterminate",
+      "status": "Done/QA Complete",
+      "status_category": "done",
       "priority": "Critical"
     },
     "HYB2-17350": {
@@ -714,7 +726,7 @@
     },
     "HYB2-17294": {
       "summary": "Reduce hybrent-react production bundle size",
-      "status": "Dev-Review",
+      "status": "Ready-For-QA",
       "status_category": "indeterminate",
       "priority": "Minor"
     },
@@ -762,13 +774,13 @@
     },
     "HYB2-17243": {
       "summary": "Order Approval > Revamping the UI/UX of 'Order Approval Flow' Feature",
-      "status": "In QA",
-      "status_category": "indeterminate",
+      "status": "Reopened",
+      "status_category": "new",
       "priority": "Minor"
     },
     "HYB2-17237": {
       "summary": "Inventory QOH upload>QOH Upload allows stock reduction of more than 20K without validation.",
-      "status": "In-Progress",
+      "status": "Dev-Review",
       "status_category": "indeterminate",
       "priority": "Minor"
     },
