@@ -482,12 +482,24 @@
       "priority": "Minor"
     }
   },
-  "current_date": "2026-09-17",
+  "current_date": "2026-09-18",
   "current_issues": {
-    "HYB2-17470": {
-      "summary": "New Cart - No pop-up appears when generating a PO for an item without a vendor Account setup.",
+    "HYB2-17523": {
+      "summary": "A database error appears when you enter special characters in Notes for Orders, Invoices, and Vendors.",
       "status": "To-Do",
       "status_category": "new",
+      "priority": "Trivial"
+    },
+    "HYB2-17521": {
+      "summary": "QA Observations regarding HYB2-17243 - Order Approval > Revamping the UI/UX of 'Order Approval Flow' Feature",
+      "status": "In-Progress",
+      "status_category": "indeterminate",
+      "priority": "Minor"
+    },
+    "HYB2-17470": {
+      "summary": "New Cart - No pop-up appears when generating a PO for an item without a vendor Account setup.",
+      "status": "UI Development",
+      "status_category": "indeterminate",
       "priority": "Minor"
     },
     "HYB2-17469": {
@@ -528,8 +540,8 @@
     },
     "HYB2-17445": {
       "summary": "Performance Degradation on Par Value Replacement Cost Report Page (~46 sec Load Time) \u2013 scionhealth_prod",
-      "status": "In-Progress",
-      "status_category": "indeterminate",
+      "status": "To-Do",
+      "status_category": "new",
       "priority": "Minor"
     },
     "HYB2-17427": {
@@ -570,8 +582,8 @@
     },
     "HYB2-17414": {
       "summary": "Alignment Issue with Grid View Pop Ups",
-      "status": "In QA",
-      "status_category": "indeterminate",
+      "status": "Done/QA Complete",
+      "status_category": "done",
       "priority": "Minor"
     },
     "HYB2-17413": {
@@ -582,13 +594,13 @@
     },
     "HYB2-17412": {
       "summary": "Vendor Management > Add notes field to vendor records",
-      "status": "In QA",
-      "status_category": "indeterminate",
+      "status": "Done/QA Complete",
+      "status_category": "done",
       "priority": "Minor"
     },
     "HYB2-17410": {
       "summary": "Punchout / EDI 810 > Carry vendor-provided GL codes to invoices",
-      "status": "Dev-Review",
+      "status": "Ready-For-QA",
       "status_category": "indeterminate",
       "priority": "Minor"
     },
@@ -612,8 +624,8 @@
     },
     "HYB2-17399": {
       "summary": "carlisle-medical.hybrent.com > shop > Below par filter > Incorrect par deficit",
-      "status": "To-Do",
-      "status_category": "new",
+      "status": "In-Progress",
+      "status_category": "indeterminate",
       "priority": "Minor"
     },
     "HYB2-17364": {
@@ -683,9 +695,9 @@
       "priority": "Minor"
     },
     "HYB2-17338": {
-      "summary": "QA Task - Cart Migration: Generate PO Flow with Selective Vendor Generation",
-      "status": "To-Do",
-      "status_category": "new",
+      "summary": "QA Task > 2026Q2S19 >  HYB2-17163 > Cart Migration: Generate PO Flow with Selective Vendor Generation",
+      "status": "In-Progress",
+      "status_category": "indeterminate",
       "priority": "Minor"
     },
     "HYB2-17337": {
@@ -726,8 +738,8 @@
     },
     "HYB2-17294": {
       "summary": "Reduce hybrent-react production bundle size",
-      "status": "Ready-For-QA",
-      "status_category": "indeterminate",
+      "status": "Done/QA Complete",
+      "status_category": "done",
       "priority": "Minor"
     },
     "HYB2-17293": {
@@ -774,13 +786,13 @@
     },
     "HYB2-17243": {
       "summary": "Order Approval > Revamping the UI/UX of 'Order Approval Flow' Feature",
-      "status": "Reopened",
-      "status_category": "new",
+      "status": "In-Progress",
+      "status_category": "indeterminate",
       "priority": "Minor"
     },
     "HYB2-17237": {
       "summary": "Inventory QOH upload>QOH Upload allows stock reduction of more than 20K without validation.",
-      "status": "Dev-Review",
+      "status": "In QA",
       "status_category": "indeterminate",
       "priority": "Minor"
     },
@@ -906,7 +918,7 @@
     },
     "HYB2-17163": {
       "summary": "Cart Migration: Generate PO Flow with Selective Vendor Generation",
-      "status": "UI Development",
+      "status": "In QA",
       "status_category": "indeterminate",
       "priority": "Minor"
     },
@@ -944,6 +956,12 @@
       "summary": "Cart Migration: Shared Cart Service Layer & TypeScript Models",
       "status": "Done/QA Complete",
       "status_category": "done",
+      "priority": "Minor"
+    },
+    "HYB2-17144": {
+      "summary": "Split Cost Center \u2013 Cart (React UI Migration)",
+      "status": "To-Do",
+      "status_category": "new",
       "priority": "Minor"
     },
     "HYB2-17136": {
@@ -990,8 +1008,8 @@
     },
     "HYB2-17072": {
       "summary": "Manage Inventory > Bulk Actions > Unable to consume the entire stock using \"Set QOH to 0\" or \"Bulk Edit QOH\" when an item's QOH exceeds 20,000.",
-      "status": "To-Do",
-      "status_category": "new",
+      "status": "In-Progress",
+      "status_category": "indeterminate",
       "priority": "Minor"
     },
     "HYB2-17066": {
