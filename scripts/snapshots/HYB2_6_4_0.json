@@ -482,8 +482,14 @@
       "priority": "Minor"
     }
   },
-  "current_date": "2026-09-18",
+  "current_date": "2026-09-19",
   "current_issues": {
+    "HYB2-17573": {
+      "summary": "Standard Billing Report \u2013 Optimize Summary Query (Code Fix + Composite Index) \u2013 allsaints_prod",
+      "status": "To-Do",
+      "status_category": "new",
+      "priority": "Minor"
+    },
     "HYB2-17523": {
       "summary": "A database error appears when you enter special characters in Notes for Orders, Invoices, and Vendors.",
       "status": "To-Do",
@@ -492,7 +498,7 @@
     },
     "HYB2-17521": {
       "summary": "QA Observations regarding HYB2-17243 - Order Approval > Revamping the UI/UX of 'Order Approval Flow' Feature",
-      "status": "In-Progress",
+      "status": "In QA",
       "status_category": "indeterminate",
       "priority": "Minor"
     },
@@ -540,8 +546,8 @@
     },
     "HYB2-17445": {
       "summary": "Performance Degradation on Par Value Replacement Cost Report Page (~46 sec Load Time) \u2013 scionhealth_prod",
-      "status": "To-Do",
-      "status_category": "new",
+      "status": "In-Progress",
+      "status_category": "indeterminate",
       "priority": "Minor"
     },
     "HYB2-17427": {
@@ -706,10 +712,16 @@
       "status_category": "done",
       "priority": "Minor"
     },
+    "HYB2-17335": {
+      "summary": "Improve Slow Summary Calculation Query \u2013 Standard Billing Report \u2013 allsaints_prod",
+      "status": "Dev Complete",
+      "status_category": "indeterminate",
+      "priority": "Minor"
+    },
     "HYB2-17334": {
       "summary": "Resize Default Procurement Partners Logo for customer sites",
-      "status": "To-Do",
-      "status_category": "new",
+      "status": "In-Progress",
+      "status_category": "indeterminate",
       "priority": "Minor"
     },
     "HYB2-17322": {
@@ -744,8 +756,8 @@
     },
     "HYB2-17293": {
       "summary": "Fix\u00a0e_prepare_item_change_log\u00a0Event Failure by Adding\u00a0facility_id\u00a0to\u00a0item_change_log_details\u00a0in 3 CL4 Databases",
-      "status": "To-Do",
-      "status_category": "new",
+      "status": "In-Progress",
+      "status_category": "indeterminate",
       "priority": "Minor"
     },
     "HYB2-17270": {
@@ -786,14 +798,14 @@
     },
     "HYB2-17243": {
       "summary": "Order Approval > Revamping the UI/UX of 'Order Approval Flow' Feature",
-      "status": "In-Progress",
+      "status": "Ready-For-QA",
       "status_category": "indeterminate",
       "priority": "Minor"
     },
     "HYB2-17237": {
       "summary": "Inventory QOH upload>QOH Upload allows stock reduction of more than 20K without validation.",
-      "status": "In QA",
-      "status_category": "indeterminate",
+      "status": "Done/QA Complete",
+      "status_category": "done",
       "priority": "Minor"
     },
     "HYB2-17236": {
@@ -918,8 +930,8 @@
     },
     "HYB2-17163": {
       "summary": "Cart Migration: Generate PO Flow with Selective Vendor Generation",
-      "status": "In QA",
-      "status_category": "indeterminate",
+      "status": "Reopened",
+      "status_category": "new",
       "priority": "Minor"
     },
     "HYB2-17162": {
