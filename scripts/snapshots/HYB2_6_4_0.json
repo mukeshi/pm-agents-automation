@@ -482,7 +482,7 @@
       "priority": "Minor"
     }
   },
-  "current_date": "2026-09-20",
+  "current_date": "2026-09-21",
   "current_issues": {
     "HYB2-17573": {
       "summary": "Standard Billing Report \u2013 Optimize Summary Query (Code Fix + Composite Index) \u2013 allsaints_prod",
@@ -504,7 +504,7 @@
     },
     "HYB2-17470": {
       "summary": "New Cart - No pop-up appears when generating a PO for an item without a vendor Account setup.",
-      "status": "UI Development",
+      "status": "Ready-For-QA",
       "status_category": "indeterminate",
       "priority": "Minor"
     },
@@ -654,7 +654,7 @@
     },
     "HYB2-17356": {
       "summary": "Code Quality: Remove variable variables ($$) usage in SendToAccountingService (SonarCloud Blocker x3)",
-      "status": "In-Progress",
+      "status": "Dev-Review",
       "status_category": "indeterminate",
       "priority": "Critical"
     },
@@ -756,7 +756,7 @@
     },
     "HYB2-17293": {
       "summary": "Fix\u00a0e_prepare_item_change_log\u00a0Event Failure by Adding\u00a0facility_id\u00a0to\u00a0item_change_log_details\u00a0in 3 CL4 Databases",
-      "status": "In-Progress",
+      "status": "In QA",
       "status_category": "indeterminate",
       "priority": "Minor"
     },
@@ -930,8 +930,8 @@
     },
     "HYB2-17163": {
       "summary": "Cart Migration: Generate PO Flow with Selective Vendor Generation",
-      "status": "Reopened",
-      "status_category": "new",
+      "status": "UI Development",
+      "status_category": "indeterminate",
       "priority": "Minor"
     },
     "HYB2-17162": {
