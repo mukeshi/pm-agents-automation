@@ -495,7 +495,7 @@ def run_release_scope_tracker(version=None, reset_baseline=False):
         print(f"\n--- {project} v{ver} ---")
 
         issues = jira_search(
-            f'project = {project} AND fixVersion = "{ver}"',
+            f'project = {project} AND fixVersion = "{ver}" AND issuetype = Story',
             fields="summary,status,priority,assignee",
             max_results=200
         )
