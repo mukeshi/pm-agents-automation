@@ -482,34 +482,22 @@
       "priority": "Minor"
     }
   },
-  "current_date": "2026-09-22",
+  "current_date": "2026-09-23",
   "current_issues": {
-    "HYB2-17574": {
-      "summary": "New Cart - Validation is not displayed when decreasing item quantity after all stock is added for Bill and Replace and Bill Only items.",
-      "status": "Done/QA Complete",
-      "status_category": "done",
-      "priority": "Trivial"
-    },
-    "HYB2-17523": {
-      "summary": "A database error appears when you enter special characters in Notes for Orders, Invoices, and Vendors.",
+    "HYB2-17585": {
+      "summary": "Cart Design Review Updates ",
       "status": "To-Do",
       "status_category": "new",
-      "priority": "Trivial"
-    },
-    "HYB2-17521": {
-      "summary": "QA Observations regarding HYB2-17243 - Order Approval > Revamping the UI/UX of 'Order Approval Flow' Feature",
-      "status": "Done/QA Complete",
-      "status_category": "done",
       "priority": "Minor"
     },
-    "HYB2-17470": {
-      "summary": "New Cart - No pop-up appears when generating a PO for an item without a vendor Account setup.",
-      "status": "In QA",
-      "status_category": "indeterminate",
+    "HYB2-17584": {
+      "summary": "PO Level Department and Cost Center",
+      "status": "To-Do",
+      "status_category": "new",
       "priority": "Minor"
     },
-    "HYB2-17469": {
-      "summary": "SQL error occurs when the user tries to enter a large value in the PO Amount Limit field. ",
+    "HYB2-17576": {
+      "summary": "Remove Inactivity Timeouts on Test Sites",
       "status": "To-Do",
       "status_category": "new",
       "priority": "Minor"
@@ -518,78 +506,6 @@
       "summary": "Apply Query Performance Optimization Changes \u2013 Standard Billing Report",
       "status": "To-Do",
       "status_category": "new",
-      "priority": "Minor"
-    },
-    "HYB2-17461": {
-      "summary": "Long item name is not wrapping on Order Detail and Print Barcode screens.",
-      "status": "To-Do",
-      "status_category": "new",
-      "priority": "Minor"
-    },
-    "HYB2-17460": {
-      "summary": "QA Observations regarding HYB2-17243 - Order Approval > Revamping the UI/UX of 'Order Approval Flow' Feature",
-      "status": "Done/QA Complete",
-      "status_category": "done",
-      "priority": "Minor"
-    },
-    "HYB2-17450": {
-      "summary": "New Cart - \"Account Setup\" and \"Check Item Availability\" options for Vendor are missing on the new UI.",
-      "status": "Done/QA Complete",
-      "status_category": "done",
-      "priority": "Minor"
-    },
-    "HYB2-17449": {
-      "summary": "New Cart - Notes and Documents attachment counts are not displayed in the new Cart module.",
-      "status": "Done/QA Complete",
-      "status_category": "done",
-      "priority": "Minor"
-    },
-    "HYB2-17445": {
-      "summary": "Performance Degradation on Par Value Replacement Cost Report Page (~46 sec Load Time) \u2013 scionhealth_prod",
-      "status": "In-Progress",
-      "status_category": "indeterminate",
-      "priority": "Minor"
-    },
-    "HYB2-17427": {
-      "summary": "Item Change Log > Tooltip Should Display \"Update Vendor Price\" Instead of \"Update Medline Price\"",
-      "status": "Done/QA Complete",
-      "status_category": "done",
-      "priority": "Trivial"
-    },
-    "HYB2-17426": {
-      "summary": "Item Change Log > Stock Status Updates Are Not Logged When Updated Through Update Vendor Pricing",
-      "status": "Done/QA Complete",
-      "status_category": "done",
-      "priority": "Minor"
-    },
-    "HYB2-17425": {
-      "summary": "Reports > Freehand Report: \"Import Vendor Bill Only Items\" appears to be selected incorrectly in the Admin menu",
-      "status": "Done/QA Complete",
-      "status_category": "done",
-      "priority": "Trivial"
-    },
-    "HYB2-17420": {
-      "summary": "Invoice Approval Flow > Rearrange Steps are not working as expected.",
-      "status": "Done/QA Complete",
-      "status_category": "done",
-      "priority": "Minor"
-    },
-    "HYB2-17419": {
-      "summary": "HYB2-17169 2nd Query: Standard billing report >> Taking too much time to load and download report failed.",
-      "status": "Done/QA Complete",
-      "status_category": "done",
-      "priority": "Minor"
-    },
-    "HYB2-17418": {
-      "summary": "HYB2-17169 Query 1 : Standard billing report >> Taking too much time to load and download report failed.",
-      "status": "Done/QA Complete",
-      "status_category": "done",
-      "priority": "Minor"
-    },
-    "HYB2-17414": {
-      "summary": "Alignment Issue with Grid View Pop Ups",
-      "status": "Done/QA Complete",
-      "status_category": "done",
       "priority": "Minor"
     },
     "HYB2-17413": {
@@ -606,140 +522,20 @@
     },
     "HYB2-17410": {
       "summary": "Punchout / EDI 810 > Carry vendor-provided GL codes to invoices",
-      "status": "Ready-For-QA",
+      "status": "Blocked",
       "status_category": "indeterminate",
       "priority": "Minor"
     },
     "HYB2-17409": {
       "summary": "Optimize Item Search / Print Barcode query \u2014 remove forced item_master index hint for Quick Code search",
-      "status": "In QA",
-      "status_category": "indeterminate",
+      "status": "Done/QA Complete",
+      "status_category": "done",
       "priority": "Minor"
     },
     "HYB2-17404": {
       "summary": "In the Top Vendors Report, the \u2018Location Name\u2019 column should be hidden when the facilities filter is set to \u2018All facilities\u2019.",
       "status": "Done/QA Complete",
       "status_category": "done",
-      "priority": "Minor"
-    },
-    "HYB2-17399": {
-      "summary": "carlisle-medical.hybrent.com > shop > Below par filter > Incorrect par deficit",
-      "status": "In-Progress",
-      "status_category": "indeterminate",
-      "priority": "Minor"
-    },
-    "HYB2-17364": {
-      "summary": "Shipment/Order/QOH Upload > SQL Validation Appears When Serial Number or Lot Number Exceeds the Character Limit.",
-      "status": "Done/QA Complete",
-      "status_category": "done",
-      "priority": "Minor"
-    },
-    "HYB2-17363": {
-      "summary": "Bill and Replace > Backjob Fails When Serial Number or Lot Number Exceeds the Character Limit.",
-      "status": "Done/QA Complete",
-      "status_category": "done",
-      "priority": "Minor"
-    },
-    "HYB2-17361": {
-      "summary": "UI changes of HYB2-17243 - Order Approval > Revamping the UI/UX of 'Order Approval Flow' Feature",
-      "status": "Done/QA Complete",
-      "status_category": "done",
-      "priority": "Minor"
-    },
-    "HYB2-17356": {
-      "summary": "Code Quality: Remove variable variables ($$) usage in SendToAccountingService (SonarCloud Blocker x3)",
-      "status": "Dev-Review",
-      "status_category": "indeterminate",
-      "priority": "Critical"
-    },
-    "HYB2-17355": {
-      "summary": "Security: Path traversal vulnerability in StockTransferNoteController::saveBase64Image (SonarCloud Blocker)",
-      "status": "Done/QA Complete",
-      "status_category": "done",
-      "priority": "Critical"
-    },
-    "HYB2-17350": {
-      "summary": "QA Task - Cart Migration: Unit Tests, Design Polish & Edge Cases",
-      "status": "To-Do",
-      "status_category": "new",
-      "priority": "Minor"
-    },
-    "HYB2-17349": {
-      "summary": "QA Task - Cart Migration: Legacy Integration, WebSocket Events & Activity Tracking",
-      "status": "To-Do",
-      "status_category": "new",
-      "priority": "Minor"
-    },
-    "HYB2-17348": {
-      "summary": "QA Task - HYB2-16695 \u2013 Require Testing on Application Code Level: Replacing USE INDEX with MySQL 8.0+ Optimizer Hints",
-      "status": "To-Do",
-      "status_category": "new",
-      "priority": "Minor"
-    },
-    "HYB2-17341": {
-      "summary": "QA Task - Admin > Print barcode/qrcode > printed barcode/qrcode appears misaligned for all Avery templates.",
-      "status": "To-Do",
-      "status_category": "new",
-      "priority": "Minor"
-    },
-    "HYB2-17340": {
-      "summary": "QA Task - Cart Migration: Cost Center Multi-Select Assignment (New UX)",
-      "status": "To-Do",
-      "status_category": "new",
-      "priority": "Minor"
-    },
-    "HYB2-17339": {
-      "summary": "Standard Billing Report \u2013 Optimize Patient Count Query Performance \u2013 fundltc_prod",
-      "status": "Done/QA Complete",
-      "status_category": "done",
-      "priority": "Minor"
-    },
-    "HYB2-17338": {
-      "summary": "QA Task > 2026Q2S19 >  Tested multiple tickets related to new cart design under this QA task. HYB2-17163, HYB2-17574, HYB2-17470",
-      "status": "In-Progress",
-      "status_category": "indeterminate",
-      "priority": "Minor"
-    },
-    "HYB2-17337": {
-      "summary": "QA Task - Cart Migration: Physician, Stock Info, Custom Fields & Auxiliary Features",
-      "status": "Done/QA Complete",
-      "status_category": "done",
-      "priority": "Minor"
-    },
-    "HYB2-17335": {
-      "summary": "Improve Slow Summary Calculation Query \u2013 Standard Billing Report \u2013 allsaints_prod",
-      "status": "Done/QA Complete",
-      "status_category": "done",
-      "priority": "Minor"
-    },
-    "HYB2-17334": {
-      "summary": "Resize Default Procurement Partners Logo for customer sites",
-      "status": "In-Progress",
-      "status_category": "indeterminate",
-      "priority": "Minor"
-    },
-    "HYB2-17322": {
-      "summary": "QA Task > 2026Q2S19 >  HYB2-17099 > Unifiedhc > The Medline API process for bulk Vendor Price Updates requires significant time.",
-      "status": "To-Do",
-      "status_category": "new",
-      "priority": "Minor"
-    },
-    "HYB2-17318": {
-      "summary": "QA Task - Cart Migration: Shared Cart Service Layer & TypeScript Models",
-      "status": "To-Do",
-      "status_category": "new",
-      "priority": "Minor"
-    },
-    "HYB2-17316": {
-      "summary": "QA Task - FundLTC Prod: Add index on job_id column in stock_transaction_queue_log to resolve lock contention",
-      "status": "Done/QA Complete",
-      "status_category": "done",
-      "priority": "Minor"
-    },
-    "HYB2-17314": {
-      "summary": "QA Task - Cart Migration: Shared Item Add-to-Cart Hook with Validation Checks",
-      "status": "To-Do",
-      "status_category": "new",
       "priority": "Minor"
     },
     "HYB2-17294": {
@@ -750,8 +546,8 @@
     },
     "HYB2-17293": {
       "summary": "Fix\u00a0e_prepare_item_change_log\u00a0Event Failure by Adding\u00a0facility_id\u00a0to\u00a0item_change_log_details\u00a0in 3 CL4 Databases",
-      "status": "In QA",
-      "status_category": "indeterminate",
+      "status": "Done/QA Complete",
+      "status_category": "done",
       "priority": "Minor"
     },
     "HYB2-17270": {
@@ -760,28 +556,10 @@
       "status_category": "done",
       "priority": "Minor"
     },
-    "HYB2-17259": {
-      "summary": "Invoices > Out of Office > Invoices are not displayed under Approve Invoices for delegated users who do not have access to the facility added to the Invoice Approval Flow.",
-      "status": "Done/QA Complete",
-      "status_category": "done",
-      "priority": "Minor"
-    },
-    "HYB2-17254": {
-      "summary": "Investigate Event Scheduler Failure in piedmont_prod.e_prepare_item_change_log \u2013 prod-cl4",
-      "status": "Done/QA Complete",
-      "status_category": "done",
-      "priority": "Minor"
-    },
     "HYB2-17251": {
       "summary": "Add UI setting to select prediction dates",
       "status": "Done/QA Complete",
       "status_category": "done",
-      "priority": "Minor"
-    },
-    "HYB2-17247": {
-      "summary": "Order/Receive/Approve po/ Cart > The user is not able to add\u00a0 30,000 characters in the special instruction field",
-      "status": "To-Do",
-      "status_category": "new",
       "priority": "Minor"
     },
     "HYB2-17245": {
@@ -796,44 +574,8 @@
       "status_category": "done",
       "priority": "Minor"
     },
-    "HYB2-17237": {
-      "summary": "Inventory QOH upload>QOH Upload allows stock reduction of more than 20K without validation.",
-      "status": "Done/QA Complete",
-      "status_category": "done",
-      "priority": "Minor"
-    },
-    "HYB2-17236": {
-      "summary": "Develop and Implement sp_analyze_tables for Multi-Database Instances with More Than 5 Databases",
-      "status": "Done/QA Complete",
-      "status_category": "done",
-      "priority": "Minor"
-    },
-    "HYB2-17232": {
-      "summary": "presbyterianhomes.hybrent.com v3.7.17 > standard billing report issue",
-      "status": "Done/QA Complete",
-      "status_category": "done",
-      "priority": "Major"
-    },
     "HYB2-17230": {
       "summary": "AI Prediction - LightGBM: 28/60 Days Extension",
-      "status": "Done/QA Complete",
-      "status_category": "done",
-      "priority": "Minor"
-    },
-    "HYB2-17219": {
-      "summary": "S17 - Unifiedhc > The Medline API process for bulk Vendor Price Updates requires significant time.",
-      "status": "Done/QA Complete",
-      "status_category": "done",
-      "priority": "Minor"
-    },
-    "HYB2-17218": {
-      "summary": "S17 - Analyse Split cost center epic changes and check whall all api changes, integrations changes and DB changes are required for this.",
-      "status": "Done/QA Complete",
-      "status_category": "done",
-      "priority": "Minor"
-    },
-    "HYB2-17212": {
-      "summary": "Optimize Slow Query Causing PO Adjustment API Slowness in scionhealth_prod",
       "status": "Done/QA Complete",
       "status_category": "done",
       "priority": "Minor"
@@ -850,44 +592,8 @@
       "status_category": "done",
       "priority": "Minor"
     },
-    "HYB2-17206": {
-      "summary": "Performance issue->It takes 5+ minutes to apply lot and expiry to all the item quantity(20000) using apply all option.",
-      "status": "Done/QA Complete",
-      "status_category": "done",
-      "priority": "Minor"
-    },
     "HYB2-17194": {
       "summary": "Improve Item Change Log Report page performance with query optimization (mercy_prod)",
-      "status": "Done/QA Complete",
-      "status_category": "done",
-      "priority": "Minor"
-    },
-    "HYB2-17193": {
-      "summary": "Item Search / Print Barcode page is slow when searching by Quick Code (ccoc_prod)",
-      "status": "Done/QA Complete",
-      "status_category": "done",
-      "priority": "Minor"
-    },
-    "HYB2-17187": {
-      "summary": "Task 1 (HYB2-16923) - Increase Order Approval Flow Maximum Levels \u2014 New Default of 8 (Overridable)",
-      "status": "Done/QA Complete",
-      "status_category": "done",
-      "priority": "Minor"
-    },
-    "HYB2-17186": {
-      "summary": "Task 1 (HYB2-16333) - API Performance Improvement > UserService's updateUsersModuleAccessJson method",
-      "status": "Done/QA Complete",
-      "status_category": "done",
-      "priority": "Major"
-    },
-    "HYB2-17184": {
-      "summary": "Task 1 (HYB2-16213) - Unify Lot and Serial Number limits in the application",
-      "status": "Done/QA Complete",
-      "status_category": "done",
-      "priority": "Minor"
-    },
-    "HYB2-17169": {
-      "summary": "Report : Standard billing report >> Taking too much time to load and download report failed.",
       "status": "Done/QA Complete",
       "status_category": "done",
       "priority": "Minor"
@@ -918,13 +624,13 @@
     },
     "HYB2-17163": {
       "summary": "Cart Migration: Generate PO Flow with Selective Vendor Generation",
-      "status": "Dev Complete",
-      "status_category": "indeterminate",
+      "status": "Done/QA Complete",
+      "status_category": "done",
       "priority": "Minor"
     },
     "HYB2-17162": {
       "summary": "Cart Migration: Cost Center Multi-Select Assignment (New UX)",
-      "status": "Ready-For-QA",
+      "status": "In QA",
       "status_category": "indeterminate",
       "priority": "Minor"
     },
@@ -936,12 +642,6 @@
     },
     "HYB2-17160": {
       "summary": "Cart Migration: Shared Item Add-to-Cart Hook with Validation Checks",
-      "status": "Done/QA Complete",
-      "status_category": "done",
-      "priority": "Minor"
-    },
-    "HYB2-17159": {
-      "summary": "Cart Migration: Cart Page Layout & Vendor-Grouped Item List",
       "status": "Done/QA Complete",
       "status_category": "done",
       "priority": "Minor"
@@ -958,76 +658,16 @@
       "status_category": "done",
       "priority": "Minor"
     },
-    "HYB2-17144": {
-      "summary": "Split Cost Center \u2013 Cart (React UI Migration)",
-      "status": "To-Do",
-      "status_category": "new",
-      "priority": "Minor"
-    },
-    "HYB2-17128": {
-      "summary": "Scionhealth > Orders Listing > Search by SKU not working \u2014 progress bar stuck, API requests cancelled",
-      "status": "Done/QA Complete",
-      "status_category": "done",
-      "priority": "Minor"
-    },
-    "HYB2-17104": {
-      "summary": "Improve Performance of Cycle Counts List API in ScionHealth",
-      "status": "Done/QA Complete",
-      "status_category": "done",
-      "priority": "Minor"
-    },
     "HYB2-17099": {
       "summary": "Unifiedhc > The Medline API process for bulk Vendor Price Updates requires significant time. ",
-      "status": "Blocked",
-      "status_category": "indeterminate",
-      "priority": "Minor"
-    },
-    "HYB2-17087": {
-      "summary": "User update->SQL STATE ERROR while updating admin users",
-      "status": "Done/QA Complete",
-      "status_category": "done",
-      "priority": "Minor"
-    },
-    "HYB2-17083": {
-      "summary": "Inventory Transfer > Transfer item with L/S/E/ tracking > stock decrement reflects Lot and Exp but increment fails to carry over the stock (manual and auto selecting stock)",
-      "status": "Done/QA Complete",
-      "status_category": "done",
-      "priority": "Major"
-    },
-    "HYB2-17072": {
-      "summary": "Manage Inventory > Bulk Actions > Unable to consume the entire stock using \"Set QOH to 0\" or \"Bulk Edit QOH\" when an item's QOH exceeds 20,000.",
       "status": "In-Progress",
       "status_category": "indeterminate",
-      "priority": "Minor"
-    },
-    "HYB2-17066": {
-      "summary": "Scionhealth > Orders Listing > Search by SKU not working \u2014 progress bar stuck, API requests cancelled",
-      "status": "Done/QA Complete",
-      "status_category": "done",
-      "priority": "Major"
-    },
-    "HYB2-17021": {
-      "summary": "Scanout > The Attach stock button is missing in case there is only 1 stock that also in OPEN state for consecutive scanouts. Auto attach works fine. Label Open Stock is missing.",
-      "status": "Done/QA Complete",
-      "status_category": "done",
       "priority": "Minor"
     },
     "HYB2-16923": {
       "summary": "Increase Order Approval Flow Maximum Levels \u2014 Apply Same Limit as Invoice Approval Flow",
       "status": "Done/QA Complete",
       "status_category": "done",
-      "priority": "Minor"
-    },
-    "HYB2-16731": {
-      "summary": "Medline> GTIN value for punchout items is not updating in item catalog",
-      "status": "To-Do",
-      "status_category": "new",
-      "priority": "Minor"
-    },
-    "HYB2-16452": {
-      "summary": "Performance issue->It takes around 2.6 minutes to map/unmap contract to all the items.",
-      "status": "To-Do",
-      "status_category": "new",
       "priority": "Minor"
     },
     "HYB2-16333": {
@@ -1040,12 +680,6 @@
       "summary": "Unify Lot and Serial Number limits in the application ",
       "status": "Done/QA Complete",
       "status_category": "done",
-      "priority": "Minor"
-    },
-    "HYB2-16140": {
-      "summary": "User is being asked to map an item that has already been deleted.",
-      "status": "To-Do",
-      "status_category": "new",
       "priority": "Minor"
     },
     "HYB2-15565": {
