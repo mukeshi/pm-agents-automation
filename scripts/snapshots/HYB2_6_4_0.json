@@ -482,24 +482,24 @@
       "priority": "Minor"
     }
   },
-  "current_date": "2026-09-24",
+  "current_date": "2026-09-25",
   "current_issues": {
     "HYB2-17585": {
       "summary": "Cart Design Review Updates ",
-      "status": "UI Development",
+      "status": "In QA",
       "status_category": "indeterminate",
       "priority": "Minor"
     },
     "HYB2-17584": {
       "summary": "PO Level Department and Cost Center",
-      "status": "To-Do",
-      "status_category": "new",
+      "status": "UI Development",
+      "status_category": "indeterminate",
       "priority": "Minor"
     },
     "HYB2-17576": {
       "summary": "Remove Inactivity Timeouts on Test Sites",
-      "status": "To-Do",
-      "status_category": "new",
+      "status": "Ready-For-QA",
+      "status_category": "indeterminate",
       "priority": "Minor"
     },
     "HYB2-17467": {
