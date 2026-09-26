@@ -482,30 +482,30 @@
       "priority": "Minor"
     }
   },
-  "current_date": "2026-09-25",
+  "current_date": "2026-09-26",
   "current_issues": {
     "HYB2-17585": {
       "summary": "Cart Design Review Updates ",
-      "status": "In QA",
+      "status": "UI Development",
       "status_category": "indeterminate",
       "priority": "Minor"
     },
     "HYB2-17584": {
       "summary": "PO Level Department and Cost Center",
-      "status": "UI Development",
+      "status": "Ready-For-QA",
       "status_category": "indeterminate",
       "priority": "Minor"
     },
     "HYB2-17576": {
       "summary": "Remove Inactivity Timeouts on Test Sites",
-      "status": "Ready-For-QA",
-      "status_category": "indeterminate",
+      "status": "Done/QA Complete",
+      "status_category": "done",
       "priority": "Minor"
     },
     "HYB2-17467": {
       "summary": "Apply Query Performance Optimization Changes \u2013 Standard Billing Report",
-      "status": "To-Do",
-      "status_category": "new",
+      "status": "In-Progress",
+      "status_category": "indeterminate",
       "priority": "Minor"
     },
     "HYB2-17413": {
@@ -630,8 +630,8 @@
     },
     "HYB2-17162": {
       "summary": "Cart Migration: Cost Center Multi-Select Assignment (New UX)",
-      "status": "Reopened",
-      "status_category": "new",
+      "status": "UI Development",
+      "status_category": "indeterminate",
       "priority": "Minor"
     },
     "HYB2-17161": {
