@@ -482,18 +482,18 @@
       "priority": "Minor"
     }
   },
-  "current_date": "2026-09-28",
+  "current_date": "2026-09-29",
   "current_issues": {
     "HYB2-17585": {
       "summary": "Cart Design Review Updates ",
-      "status": "UI Development",
+      "status": "Dev-Review",
       "status_category": "indeterminate",
       "priority": "Minor"
     },
     "HYB2-17584": {
       "summary": "PO Level Department and Cost Center",
-      "status": "In QA",
-      "status_category": "indeterminate",
+      "status": "Reopened",
+      "status_category": "new",
       "priority": "Minor"
     },
     "HYB2-17576": {
@@ -630,7 +630,7 @@
     },
     "HYB2-17162": {
       "summary": "Cart Migration: Cost Center Multi-Select Assignment (New UX)",
-      "status": "UI Development",
+      "status": "Dev-Review",
       "status_category": "indeterminate",
       "priority": "Minor"
     },
