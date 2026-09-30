@@ -482,7 +482,7 @@
       "priority": "Minor"
     }
   },
-  "current_date": "2026-09-29",
+  "current_date": "2026-09-30",
   "current_issues": {
     "HYB2-17585": {
       "summary": "Cart Design Review Updates ",
@@ -504,7 +504,7 @@
     },
     "HYB2-17467": {
       "summary": "Apply Query Performance Optimization Changes \u2013 Standard Billing Report",
-      "status": "Ready-For-QA",
+      "status": "In QA",
       "status_category": "indeterminate",
       "priority": "Minor"
     },
@@ -660,7 +660,7 @@
     },
     "HYB2-17099": {
       "summary": "Unifiedhc > The Medline API process for bulk Vendor Price Updates requires significant time. ",
-      "status": "Dev-Review",
+      "status": "Ready-For-QA",
       "status_category": "indeterminate",
       "priority": "Minor"
     },
