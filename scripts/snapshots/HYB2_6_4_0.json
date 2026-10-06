@@ -482,17 +482,17 @@
       "priority": "Minor"
     }
   },
-  "current_date": "2026-10-05",
+  "current_date": "2026-10-06",
   "current_issues": {
     "HYB2-17585": {
       "summary": "Cart Design Review Updates ",
-      "status": "Dev-Review",
-      "status_category": "indeterminate",
+      "status": "Done/QA Complete",
+      "status_category": "done",
       "priority": "Minor"
     },
     "HYB2-17584": {
       "summary": "PO Level Department and Cost Center",
-      "status": "Dev-Review",
+      "status": "In QA",
       "status_category": "indeterminate",
       "priority": "Minor"
     },
@@ -606,8 +606,8 @@
     },
     "HYB2-17165": {
       "summary": "Cart Migration: Legacy Integration, WebSocket Events & Activity Tracking",
-      "status": "In QA",
-      "status_category": "indeterminate",
+      "status": "Reopened",
+      "status_category": "new",
       "priority": "Minor"
     },
     "HYB2-17164": {
@@ -624,7 +624,7 @@
     },
     "HYB2-17162": {
       "summary": "Cart Migration: Cost Center Multi-Select Assignment (New UX)",
-      "status": "Dev-Review",
+      "status": "In QA",
       "status_category": "indeterminate",
       "priority": "Minor"
     },
