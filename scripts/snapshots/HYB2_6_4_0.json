@@ -482,7 +482,7 @@
       "priority": "Minor"
     }
   },
-  "current_date": "2026-10-06",
+  "current_date": "2026-10-07",
   "current_issues": {
     "HYB2-17585": {
       "summary": "Cart Design Review Updates ",
@@ -492,8 +492,8 @@
     },
     "HYB2-17584": {
       "summary": "PO Level Department and Cost Center",
-      "status": "In QA",
-      "status_category": "indeterminate",
+      "status": "Done/QA Complete",
+      "status_category": "done",
       "priority": "Minor"
     },
     "HYB2-17576": {
@@ -522,8 +522,8 @@
     },
     "HYB2-17410": {
       "summary": "Punchout / EDI 810 > Carry vendor-provided GL codes to invoices",
-      "status": "In QA",
-      "status_category": "indeterminate",
+      "status": "Done/QA Complete",
+      "status_category": "done",
       "priority": "Minor"
     },
     "HYB2-17409": {
@@ -624,8 +624,8 @@
     },
     "HYB2-17162": {
       "summary": "Cart Migration: Cost Center Multi-Select Assignment (New UX)",
-      "status": "In QA",
-      "status_category": "indeterminate",
+      "status": "Done/QA Complete",
+      "status_category": "done",
       "priority": "Minor"
     },
     "HYB2-17161": {
