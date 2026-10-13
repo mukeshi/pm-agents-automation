@@ -482,12 +482,18 @@
       "priority": "Minor"
     }
   },
-  "current_date": "2026-10-12",
+  "current_date": "2026-10-13",
   "current_issues": {
-    "HYB2-17645": {
-      "summary": "Empower \u2192 Hybrent PO Integration via SFTP",
+    "HYB2-17695": {
+      "summary": "CR - Cart Design Changes",
       "status": "To-Do",
       "status_category": "new",
+      "priority": "Minor"
+    },
+    "HYB2-17645": {
+      "summary": "Empower \u2192 Hybrent PO Integration via SFTP",
+      "status": "In-Progress",
+      "status_category": "indeterminate",
       "priority": "Major"
     },
     "HYB2-17585": {
@@ -612,8 +618,8 @@
     },
     "HYB2-17165": {
       "summary": "Cart Migration: Legacy Integration, WebSocket Events & Activity Tracking",
-      "status": "Ready-For-QA",
-      "status_category": "indeterminate",
+      "status": "Done/QA Complete",
+      "status_category": "done",
       "priority": "Minor"
     },
     "HYB2-17164": {
