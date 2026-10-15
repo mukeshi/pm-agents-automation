@@ -482,18 +482,18 @@
       "priority": "Minor"
     }
   },
-  "current_date": "2026-10-14",
+  "current_date": "2026-10-15",
   "current_issues": {
     "HYB2-17695": {
       "summary": "CR - Cart Design Changes",
-      "status": "UI Development",
+      "status": "Ready-For-QA",
       "status_category": "indeterminate",
       "priority": "Minor"
     },
     "HYB2-17645": {
       "summary": "Empower \u2192 Hybrent PO Integration via SFTP",
-      "status": "To-Do",
-      "status_category": "new",
+      "status": "Blocked",
+      "status_category": "indeterminate",
       "priority": "Major"
     },
     "HYB2-17585": {
