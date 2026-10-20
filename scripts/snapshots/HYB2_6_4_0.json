@@ -482,19 +482,19 @@
       "priority": "Minor"
     }
   },
-  "current_date": "2026-10-19",
+  "current_date": "2026-10-20",
   "current_issues": {
+    "HYB2-17728": {
+      "summary": "Cart \u2013 Mandatory Indicator and Red Validation for Department Cost Center",
+      "status": "To-Do",
+      "status_category": "new",
+      "priority": "Minor"
+    },
     "HYB2-17695": {
       "summary": "CR - Cart Design Changes",
       "status": "Ready-For-QA",
       "status_category": "indeterminate",
       "priority": "Minor"
-    },
-    "HYB2-17645": {
-      "summary": "Empower \u2192 Hybrent PO Integration via SFTP",
-      "status": "Blocked",
-      "status_category": "indeterminate",
-      "priority": "Major"
     },
     "HYB2-17585": {
       "summary": "Cart Design Review Updates ",
