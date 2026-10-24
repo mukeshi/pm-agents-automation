@@ -482,12 +482,12 @@
       "priority": "Minor"
     }
   },
-  "current_date": "2026-10-23",
+  "current_date": "2026-10-24",
   "current_issues": {
     "HYB2-17728": {
       "summary": "Cart \u2013 Mandatory Indicator and Red Validation for Department Cost Center",
-      "status": "Ready-For-QA",
-      "status_category": "indeterminate",
+      "status": "Done/QA Complete",
+      "status_category": "done",
       "priority": "Minor"
     },
     "HYB2-17695": {
