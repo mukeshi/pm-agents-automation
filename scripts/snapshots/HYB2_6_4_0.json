@@ -482,8 +482,14 @@
       "priority": "Minor"
     }
   },
-  "current_date": "2026-10-26",
+  "current_date": "2026-10-27",
   "current_issues": {
+    "HYB2-17788": {
+      "summary": "Review > Mercy.hybrent.com > Invoice > Error invoice auto sent to accounting",
+      "status": "Ready-For-QA",
+      "status_category": "indeterminate",
+      "priority": "Major"
+    },
     "HYB2-17728": {
       "summary": "Cart \u2013 Mandatory Indicator and Red Validation for Department Cost Center",
       "status": "Done/QA Complete",
